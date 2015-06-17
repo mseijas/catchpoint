@@ -5,6 +5,7 @@
 //  Created by Matias on 6/17/15.
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
+#import "CPAPIManager.h"
 
 #import "AppDelegate.h"
 
@@ -16,7 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+    NSDictionary *tokenResponse = [CPAPIManager requestToken];
+    
+    NSLog(@"Token Response: %@", tokenResponse);
+    
     return YES;
 }
 

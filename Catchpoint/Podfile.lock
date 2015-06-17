@@ -6,6 +6,8 @@ PODS:
     - AFNetworking/Security (= 2.5.4)
     - AFNetworking/Serialization (= 2.5.4)
     - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking-Synchronous/2.x (0.3.1):
+    - AFNetworking (~> 2.0)
   - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -23,8 +25,10 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AFNetworking-Synchronous/2.x
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AFNetworking-Synchronous: 29531ad341ec465a4ff9b66dea9cf7272080e12e
 
 COCOAPODS: 0.37.1

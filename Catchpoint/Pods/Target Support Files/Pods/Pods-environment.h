@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking 4
 
+// AFNetworking-Synchronous/2.x
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_Synchronous_2_x
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_Synchronous_2_x 0
+#define COCOAPODS_VERSION_MINOR_AFNetworking_Synchronous_2_x 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Synchronous_2_x 1
+
 // AFNetworking/NSURLConnection
 #define COCOAPODS_POD_AVAILABLE_AFNetworking_NSURLConnection
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_NSURLConnection 2
