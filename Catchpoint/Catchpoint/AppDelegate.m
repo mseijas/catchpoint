@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 #import "CPAPIManager.h"
+#import "CPToken.h"
 
 #import "AppDelegate.h"
 
@@ -18,9 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
-    NSDictionary *tokenResponse = [CPAPIManager requestToken];
+//    NSDictionary *tokenResponse = [CPAPIManager requestToken];
+//    
+//    NSLog(@"Token Response: %@", tokenResponse);
+    NSString *token64Base = [[CPToken sharedToken] token];
     
-    NSLog(@"Token Response: %@", tokenResponse);
+    NSLog(@"Token 64Base: %@", token64Base);
     
     return YES;
 }

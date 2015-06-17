@@ -27,7 +27,9 @@
                                  @"client_secret": @"6156945d-25b1-44be-9f0b-8208db62fc45"};
     
     NSError *error;
+    
     NSData *data = [manager syncPOST:@"https://io.catchpoint.com/ui/api/token" parameters:parameters operation:NULL error:&error];
+    
     
     if (error) {
         return error;

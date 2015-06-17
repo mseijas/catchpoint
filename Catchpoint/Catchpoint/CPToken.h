@@ -10,6 +10,8 @@
 
 @interface CPToken : NSObject
 
+@property (nonatomic, weak, readonly) NSString *token;
 
++ (instancetype)sharedToken;
 
 @end

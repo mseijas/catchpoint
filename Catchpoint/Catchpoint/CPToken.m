@@ -9,11 +9,12 @@
 #import <AFNetworking.h>
 
 #import "CPToken.h"
+#import "CPAPIManager.h"
 
 @interface CPToken ()
 
-@property (nonatomic, strong, readonly) NSString *token;
-@property (nonatomic, readonly) NSUInteger *expiration;
+@property (nonatomic, strong) NSString *privateToken;
+@property (nonatomic) int privateExpiration;
 
 @property (nonatomic, strong) NSDate *generatedAt;
 
@@ -47,17 +48,70 @@
     self = [super init];
     
     if (self) {
-        [self generateTokenWithKey:@"" secret:@""];
+        [self generateToken];
     }
     
     return self;
 }
 
-- (NSString *)generateTokenWithKey:(NSString *)key secret:(NSString *)secret {
+- (NSString *)token {
+    NSLog(@"Accessing token...");
+
+    BOOL isExpired = [self isTokenExpired];
+    
+    if (isExpired == YES) {
+        [self generateToken];
+        return self.privateToken;
+    }
+    
+    return self.privateToken;
+}
+
+- (void)generateToken {
+    NSLog(@"Generating Token...");
     
     self.generatedAt = [NSDate new];
     
-    return @"generatedNewTorrent";
+    NSDictionary *request = [CPAPIManager requestToken];
+    NSString *tokenResponse = request[@"access_token"];
+    int tokenExpiration = (int)request[@"expires_in"];
+    
+    NSLog(@"Token Response: %@", tokenResponse);
+    NSLog(@"Token Expireation: %i", tokenExpiration);
+    
+    NSString *token = [self encodeStringTo64:tokenResponse];
+    
+    NSLog(@"Generated Token: %@", token);
+    
+    self.privateExpiration = tokenExpiration;
+    self.privateToken = [NSString stringWithFormat:@"Bearer %@", token];
+}
+
+- (NSString *)encodeStringTo64:(NSString *)fromString
+{
+    NSData *plainData = [fromString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64String;
+    
+    base64String = [plainData base64EncodedStringWithOptions:kNilOptions];
+    
+    return base64String;
+}
+
+- (BOOL)isTokenExpired {
+    NSDate *now = [NSDate new];
+    
+    NSTimeInterval timeDifference = [now timeIntervalSinceDate:self.generatedAt];
+    int intTimeDifference = (int)timeDifference;
+    
+    NSLog(@"Time difference = %i", intTimeDifference);
+    
+    if (intTimeDifference < self.privateExpiration) {
+        NSLog(@"Token not expired");
+        return NO;
+    }
+    
+    NSLog(@"Token EXPIRED!");
+    return YES;
 }
 
 @end
