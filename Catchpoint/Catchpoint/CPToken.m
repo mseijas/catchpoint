@@ -14,7 +14,7 @@
 @interface CPToken ()
 
 @property (nonatomic, strong) NSString *privateToken;
-@property (nonatomic) int privateExpiration;
+@property (nonatomic) int expiration;
 
 @property (nonatomic, strong) NSDate *generatedAt;
 
@@ -55,7 +55,7 @@
 }
 
 - (NSString *)token {
-    NSLog(@"Accessing token...");
+    // NSLog(@"Accessing token...");
 
     BOOL isExpired = [self isTokenExpired];
     
@@ -76,14 +76,14 @@
     NSString *tokenResponse = request[@"access_token"];
     int tokenExpiration = (int)request[@"expires_in"];
     
-    NSLog(@"Token Response: %@", tokenResponse);
-    NSLog(@"Token Expireation: %i", tokenExpiration);
+    // NSLog(@"Token Response: %@", tokenResponse);
+    // NSLog(@"Token Expireation: %i", tokenExpiration);
     
     NSString *token = [self encodeStringTo64:tokenResponse];
     
-    NSLog(@"Generated Token: %@", token);
+    // NSLog(@"Generated Token: %@", token);
     
-    self.privateExpiration = tokenExpiration;
+    self.expiration = tokenExpiration;
     self.privateToken = [NSString stringWithFormat:@"Bearer %@", token];
 }
 
@@ -103,9 +103,9 @@
     NSTimeInterval timeDifference = [now timeIntervalSinceDate:self.generatedAt];
     int intTimeDifference = (int)timeDifference;
     
-    NSLog(@"Time difference = %i", intTimeDifference);
+    // NSLog(@"Time difference = %i", intTimeDifference);
     
-    if (intTimeDifference < self.privateExpiration) {
+    if (intTimeDifference < self.expiration) {
         NSLog(@"Token not expired");
         return NO;
     }

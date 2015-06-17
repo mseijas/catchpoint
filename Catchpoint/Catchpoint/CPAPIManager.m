@@ -10,10 +10,9 @@
 #import <AFHTTPRequestOperationManager+Synchronous.h>
 
 #import "CPAPIManager.h"
+#import "CPToken.h"
 
 @interface CPAPIManager()
-
-//@property (nonatomic, strong) NSDictionary *authResponse;
 
 @end
 
@@ -41,5 +40,31 @@
     return nil;
 }
 
++ (id)GET:(NSString *)uri {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    manager.responseSerializer.acceptableContentTypes = nil;
+    
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:[[CPToken sharedToken] token] forHTTPHeaderField:@"Authorization"];
+    
+    NSError *error;
+    
+    NSData *data = [manager syncGET:uri parameters:nil operation:NULL error:&error];
+    
+    
+    if (error) {
+        return error;
+    }
+    if (data) {
+        return data;
+    }
+    
+    return nil;
+}
 
 @end

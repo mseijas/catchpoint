@@ -18,13 +18,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   
-//    NSDictionary *tokenResponse = [CPAPIManager requestToken];
-//    
-//    NSLog(@"Token Response: %@", tokenResponse);
-    NSString *token64Base = [[CPToken sharedToken] token];
     
-    NSLog(@"Token 64Base: %@", token64Base);
+    NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/nodes"];
+    
+    NSLog(@"Nodes: %@", nodes);
     
     return YES;
 }

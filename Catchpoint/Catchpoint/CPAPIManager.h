@@ -12,4 +12,6 @@
 
 + (id)requestToken;
 
++ (id)GET:(NSString *)uri;
+
 @end
