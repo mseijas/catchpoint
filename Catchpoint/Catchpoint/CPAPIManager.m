@@ -12,9 +12,9 @@
 #import "CPAPIManager.h"
 #import "CPToken.h"
 
-@interface CPAPIManager()
 
-@end
+NSString * const clientID = @"RY-b-jQ9lcHWSsq";
+NSString * const clientSecret = @"6156945d-25b1-44be-9f0b-8208db62fc45";
 
 @implementation CPAPIManager
 
@@ -22,8 +22,8 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary *parameters = @{@"grant_type": @"client_credentialst",
-                                 @"client_id": @"RY-b-jQ9lcHWSsq",
-                                 @"client_secret": @"6156945d-25b1-44be-9f0b-8208db62fc45"};
+                                 @"client_id": clientID,
+                                 @"client_secret": clientSecret};
     
     NSError *error;
     
