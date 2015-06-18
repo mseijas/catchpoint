@@ -54,17 +54,17 @@
     return self;
 }
 
-- (NSString *)token {
++ (NSString *)token {
     // NSLog(@"Accessing token...");
 
-    BOOL isExpired = [self isTokenExpired];
+    BOOL isExpired = [[CPToken sharedToken] isTokenExpired];
     
     if (isExpired == YES) {
-        [self generateToken];
-        return self.privateToken;
+        [[CPToken sharedToken] generateToken];
+        return [CPToken sharedToken].privateToken;
     }
     
-    return self.privateToken;
+    return [CPToken sharedToken].privateToken;
 }
 
 - (void)generateToken {
@@ -77,7 +77,7 @@
     int tokenExpiration = (int)request[@"expires_in"];
     
     // NSLog(@"Token Response: %@", tokenResponse);
-    // NSLog(@"Token Expireation: %i", tokenExpiration);
+    NSLog(@"Token Expiration: %is", tokenExpiration);
     
     NSString *token = [self encodeStringTo64:tokenResponse];
     
@@ -106,11 +106,11 @@
     // NSLog(@"Time difference = %i", intTimeDifference);
     
     if (intTimeDifference < self.expiration) {
-        NSLog(@"Token not expired");
+        // NSLog(@"Token not expired");
         return NO;
     }
     
-    NSLog(@"Token EXPIRED!");
+    NSLog(@"Token expired!");
     return YES;
 }
 

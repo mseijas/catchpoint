@@ -12,6 +12,6 @@
 
 @property (nonatomic, weak, readonly) NSString *token;
 
-+ (instancetype)sharedToken;
++ (NSString *)token;
 
 @end
