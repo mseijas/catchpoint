@@ -19,9 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//     NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/favoriteCharts"];
+//     NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/favoriteCharts/12081/data"];
 //     NSArray *data = nodes[@"items"];
-//    
+//
 //     NSLog(@"Nodes: %@", nodes);
     
     return YES;

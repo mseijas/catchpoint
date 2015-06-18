@@ -22,6 +22,8 @@
     NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/favoriteCharts"];
     NSArray *data = nodes[@"items"];
     
+    NSLog(@"%@", data);
+    
     self.data = data;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
