@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 #import "CPAPIManager.h"
-#import "CPToken.h"
+#import "DataUtils.h"
 
 #import "AppDelegate.h"
 
@@ -19,14 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-     NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/raw?tests=33621"];
-//     NSArray *data = nodes[@"items"];
-
-//     NSLog(@"Nodes: %@", nodes);
+    NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/raw?tests=33621"];
     
-    
-    
-    
+    NSLog(@"RESULTS: \n%@", [DataUtils dataToJSON:nodes]);
     
     return YES;
 }
