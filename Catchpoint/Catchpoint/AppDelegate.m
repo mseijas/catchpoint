@@ -9,6 +9,7 @@
 #import "CPToken.h"
 
 #import "AppDelegate.h"
+#import "MainTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/nodes"];
+    NSArray *data = nodes[@"items"];
+    
+    MainTableViewController *mainTableViewController = [[MainTableViewController alloc] init];
+    mainTableViewController.data = data;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = mainTableViewController;
+    [self.window makeKeyAndVisible];
     
     NSLog(@"Nodes: %@", nodes);
     
