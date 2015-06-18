@@ -48,6 +48,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qML-Io-TUL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.03542099452560294" green="0.48367351414836329" blue="0.85042557565789478" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="gEF-dR-KpZ" kind="relationship" relationship="rootViewController" id="F7M-4X-y4g"/>
