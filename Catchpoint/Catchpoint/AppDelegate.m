@@ -19,10 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//     NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/favoriteCharts/12081/data"];
+     NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/raw?tests=33621"];
 //     NSArray *data = nodes[@"items"];
-//
+
 //     NSLog(@"Nodes: %@", nodes);
+    
+    
+    
+    
     
     return YES;
 }

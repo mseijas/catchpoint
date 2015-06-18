@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2384CA7099619450330B29A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E39D64178866B6617BB8B3 /* libPods.a */; };
+		600C65A31B33268000CBFED3 /* DataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 600C65A21B33268000CBFED3 /* DataUtils.m */; };
 		601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601AC6301B3260E300641F09 /* MainTableViewController.m */; };
 		60F32C9C1B31FF7300BDCA16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9B1B31FF7300BDCA16 /* main.m */; };
 		60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9E1B31FF7300BDCA16 /* AppDelegate.m */; };
@@ -32,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		51E39D64178866B6617BB8B3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		600C65A11B33268000CBFED3 /* DataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtils.h; sourceTree = "<group>"; };
+		600C65A21B33268000CBFED3 /* DataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtils.m; sourceTree = "<group>"; };
 		601AC62F1B3260E300641F09 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		601AC6301B3260E300641F09 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		60F32C961B31FF7300BDCA16 /* Catchpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catchpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +86,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		600C65A41B33268300CBFED3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				600C65A11B33268000CBFED3 /* DataUtils.h */,
+				600C65A21B33268000CBFED3 /* DataUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		60F32C8D1B31FF7300BDCA16 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				60F32CC21B32003200BDCA16 /* API */,
+				600C65A41B33268300CBFED3 /* Utils */,
 				60F32C9D1B31FF7300BDCA16 /* AppDelegate.h */,
 				60F32C9E1B31FF7300BDCA16 /* AppDelegate.m */,
 				60F32CA01B31FF7300BDCA16 /* ViewController.h */,
@@ -302,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60F32CC11B32002E00BDCA16 /* CPToken.m in Sources */,
+				600C65A31B33268000CBFED3 /* DataUtils.m in Sources */,
 				60F32CA21B31FF7300BDCA16 /* ViewController.m in Sources */,
 				601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */,
 				60F32CC51B32059800BDCA16 /* CPAPIManager.m in Sources */,
