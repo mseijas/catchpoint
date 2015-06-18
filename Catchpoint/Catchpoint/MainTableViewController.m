@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
+#import "CPAPIManager.h"
+
 #import "MainTableViewController.h"
 
 @interface MainTableViewController ()
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSDictionary *nodes = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/favoriteCharts"];
+    NSArray *data = nodes[@"items"];
+    
+    self.data = data;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -43,12 +49,12 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CPCell" forIndexPath:indexPath];
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CPCell" forIndexPath:indexPath];
     
-    NSLog(@"Init cell %ld", indexPath.row);
+    NSString *favoriteChart = [NSString stringWithFormat:@"[%i] - %@", (int)self.data[indexPath.row][@"id"], self.data[indexPath.row][@"name"]];
     
-    cell.textLabel.text = self.data[indexPath.row][@"city"][@"name"];
+//    cell.textLabel.text = self.data[indexPath.row][@"city"][@"name"];
+    cell.textLabel.text = favoriteChart;
     
     return cell;
 }
