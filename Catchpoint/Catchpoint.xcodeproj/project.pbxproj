@@ -20,6 +20,7 @@
 		60F32CC11B32002E00BDCA16 /* CPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CC01B32002E00BDCA16 /* CPToken.m */; };
 		60F32CC51B32059800BDCA16 /* CPAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CC41B32059800BDCA16 /* CPAPIManager.m */; };
 		60FE434E1B3329F500109D14 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FE434D1B3329F500109D14 /* Charts.framework */; };
+		60FE435E1B33516600109D14 /* TimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FE435D1B33516600109D14 /* TimeUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		60F32CC31B32059800BDCA16 /* CPAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAPIManager.h; sourceTree = "<group>"; };
 		60F32CC41B32059800BDCA16 /* CPAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAPIManager.m; sourceTree = "<group>"; };
 		60FE434D1B3329F500109D14 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
+		60FE435C1B33516600109D14 /* TimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeUtils.h; sourceTree = "<group>"; };
+		60FE435D1B33516600109D14 /* TimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeUtils.m; sourceTree = "<group>"; };
 		8461E40B0698537AA6C831A4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		96F26BF93D3293323604DF4A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +97,8 @@
 			children = (
 				600C65A11B33268000CBFED3 /* DataUtils.h */,
 				600C65A21B33268000CBFED3 /* DataUtils.m */,
+				60FE435C1B33516600109D14 /* TimeUtils.h */,
+				60FE435D1B33516600109D14 /* TimeUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */,
 				60F32CC51B32059800BDCA16 /* CPAPIManager.m in Sources */,
 				60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */,
+				60FE435E1B33516600109D14 /* TimeUtils.m in Sources */,
 				60F32C9C1B31FF7300BDCA16 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
