@@ -22,13 +22,16 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FSLineChart (0.1.7)
 
 DEPENDENCIES:
   - AFNetworking
   - AFNetworking-Synchronous/2.x
+  - FSLineChart
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AFNetworking-Synchronous: 29531ad341ec465a4ff9b66dea9cf7272080e12e
+  FSLineChart: 1b8d3727e8feb323144126d381184bf1b15e6efc
 
 COCOAPODS: 0.37.1

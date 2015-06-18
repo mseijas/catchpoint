@@ -20,31 +20,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSDictionary *testData = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/raw?tests=33621"];
-    
-//    NSLog(@"RESULTS: \n%@", [DataUtils dataToJSON:testData]);
-    
-    
-    // *Printing Webpage Response for Test Data
-    NSArray *items = testData[@"detail"][@"items"];
-    
-    for (int i=0; i < items.count; i++) {
-        NSString *metricValString = items[i][@"synthetic_metrics"][17];
-        double metricValue = [metricValString doubleValue];
-        
-        NSString *date = items[i][@"dimension"][@"name"];
-        
-        NSDate *utcDate = [TimeUtils utcStringToDate:date];
-        
-//        NSString *mystring = @"This is a test message having more than 20 characters";
-//        NSString *newString = [date substringToIndex:19];
-//        NSLog(@"%@", newString);
-        NSLog(@"Date: %@", date);
-        NSLog(@"UTC: %@", utcDate);
-        NSLog(@"Local: %@", [TimeUtils formatFullDate:utcDate]);
-        
-        NSLog(@"-- Webpage Response: %.0f\n", metricValue);
-    }
+//    NSDictionary *testData = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/raw?tests=33621"];
+//    
+////    NSLog(@"RESULTS: \n%@", [DataUtils dataToJSON:testData]);
+//    
+//    
+//    // *Printing Webpage Response for Test Data
+//    NSArray *items = testData[@"detail"][@"items"];
+//    
+//    for (int i=0; i < items.count; i++) {
+//        NSString *metricValString = items[i][@"synthetic_metrics"][17];
+//        double metricValue = [metricValString doubleValue];
+//        
+//        NSString *date = items[i][@"dimension"][@"name"];
+//        
+//        NSDate *utcDate = [TimeUtils utcStringToDate:date];
+//        
+////        NSString *mystring = @"This is a test message having more than 20 characters";
+////        NSString *newString = [date substringToIndex:19];
+////        NSLog(@"%@", newString);
+//        NSLog(@"Date: %@", date);
+//        NSLog(@"UTC: %@", utcDate);
+//        NSLog(@"Local: %@", [TimeUtils formatFullDate:utcDate]);
+//        
+//        NSLog(@"-- Webpage Response: %.0f\n", metricValue);
+//    }
     
     return YES;
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2384CA7099619450330B29A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E39D64178866B6617BB8B3 /* libPods.a */; };
+		6001C5701B335D1B00797F0D /* TestPerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001C56F1B335D1B00797F0D /* TestPerformanceViewController.m */; };
 		600C65A31B33268000CBFED3 /* DataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 600C65A21B33268000CBFED3 /* DataUtils.m */; };
 		601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601AC6301B3260E300641F09 /* MainTableViewController.m */; };
 		60F32C9C1B31FF7300BDCA16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9B1B31FF7300BDCA16 /* main.m */; };
@@ -19,7 +20,6 @@
 		60F32CB61B31FF7300BDCA16 /* CatchpointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CB51B31FF7300BDCA16 /* CatchpointTests.m */; };
 		60F32CC11B32002E00BDCA16 /* CPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CC01B32002E00BDCA16 /* CPToken.m */; };
 		60F32CC51B32059800BDCA16 /* CPAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CC41B32059800BDCA16 /* CPAPIManager.m */; };
-		60FE434E1B3329F500109D14 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FE434D1B3329F500109D14 /* Charts.framework */; };
 		60FE435E1B33516600109D14 /* TimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FE435D1B33516600109D14 /* TimeUtils.m */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		51E39D64178866B6617BB8B3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6001C56E1B335D1B00797F0D /* TestPerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPerformanceViewController.h; sourceTree = "<group>"; };
+		6001C56F1B335D1B00797F0D /* TestPerformanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPerformanceViewController.m; sourceTree = "<group>"; };
 		600C65A11B33268000CBFED3 /* DataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtils.h; sourceTree = "<group>"; };
 		600C65A21B33268000CBFED3 /* DataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtils.m; sourceTree = "<group>"; };
 		601AC62F1B3260E300641F09 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -68,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60FE434E1B3329F500109D14 /* Charts.framework in Frameworks */,
 				2384CA7099619450330B29A3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +134,8 @@
 				60F32CA01B31FF7300BDCA16 /* ViewController.h */,
 				60F32CA11B31FF7300BDCA16 /* ViewController.m */,
 				60F32CA31B31FF7300BDCA16 /* Main.storyboard */,
+				6001C56E1B335D1B00797F0D /* TestPerformanceViewController.h */,
+				6001C56F1B335D1B00797F0D /* TestPerformanceViewController.m */,
 				601AC62F1B3260E300641F09 /* MainTableViewController.h */,
 				601AC6301B3260E300641F09 /* MainTableViewController.m */,
 				60F32CA61B31FF7300BDCA16 /* Images.xcassets */,
@@ -331,6 +334,7 @@
 				60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */,
 				60FE435E1B33516600109D14 /* TimeUtils.m in Sources */,
 				60F32C9C1B31FF7300BDCA16 /* main.m in Sources */,
+				6001C5701B335D1B00797F0D /* TestPerformanceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

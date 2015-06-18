@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FSLineChart.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2AD350DCF9DE7C10A4D712B9</key>
+		<key>264B905970BD03093C6FC1E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C01198A3C13C643F62F7EE82</key>
+		<key>64583E315F1AF29210766032</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9929AD73A044E16F495C366</key>
+		<key>82ED0136B2FE862C091FAE20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD36D520A7633A9869745AF2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

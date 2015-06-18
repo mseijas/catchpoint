@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>2BC5A0C6-719C-472A-AFC2-350715928D6B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Catchpoint</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>060C5ED13A04BCA393A1E44EC275BB118565DB5A</key>
 		<string>https://github.com/mseijas/catchpoint.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Catchpoint/Catchpoint.xcodeproj/project.xcworkspace</string>
+	<string>Catchpoint/Catchpoint.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>060C5ED13A04BCA393A1E44EC275BB118565DB5A</key>
