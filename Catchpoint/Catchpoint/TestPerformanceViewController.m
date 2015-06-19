@@ -70,6 +70,9 @@
     self.chart.horizontalGridStep = 4;
     
     NSArray *timeStamps = [CPParser getTimeStampFromSyntheticData:self.data];
+    self.testLabel.text = [CPParser getTestNameFromSyntheticData:self.data];
+    NSArray *chartData = [CPParser getMetric:17 fromSyntheticData:self.data];
+    
     
     self.chart.labelForIndex = ^(NSUInteger item) {
         return [TimeUtils formatTime:[TimeUtils utcStringToDate:timeStamps[item]]];
@@ -78,9 +81,6 @@
     self.chart.labelForValue = ^(CGFloat value) {
         return [NSString stringWithFormat:@"%.f", value];
     };
-    
-    self.testLabel.text = [CPParser getTestNameFromSyntheticData:self.data];
-    NSArray *chartData = [CPParser getMetric:17 fromSyntheticData:self.data];
     
     [self.chart setChartData:chartData];
 }

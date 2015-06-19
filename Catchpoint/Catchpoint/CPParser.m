@@ -44,6 +44,7 @@
             NSString *timeStamp = data[i][@"dimension"][@"name"];
             
             // NSLog(@"Timestamp: %@", timeStamp);
+            
             [timeData addObject:timeStamp];
         }
         
