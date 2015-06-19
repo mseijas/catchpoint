@@ -13,5 +13,9 @@
 + (id)requestToken;
 
 + (id)GET:(NSString *)uri;
++ (id)apiGET:(NSString *)request;
+
++ (NSString *)apiVersion;
++ (NSString *)apiURL;
 
 @end

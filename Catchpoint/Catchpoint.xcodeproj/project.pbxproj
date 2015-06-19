@@ -11,6 +11,7 @@
 		6001C5701B335D1B00797F0D /* TestPerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001C56F1B335D1B00797F0D /* TestPerformanceViewController.m */; };
 		600C65A31B33268000CBFED3 /* DataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 600C65A21B33268000CBFED3 /* DataUtils.m */; };
 		601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601AC6301B3260E300641F09 /* MainTableViewController.m */; };
+		60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA286C1B349356002B281B /* CPAPIRequest.m */; };
 		60F32C9C1B31FF7300BDCA16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9B1B31FF7300BDCA16 /* main.m */; };
 		60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9E1B31FF7300BDCA16 /* AppDelegate.m */; };
 		60F32CA21B31FF7300BDCA16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CA11B31FF7300BDCA16 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 		600C65A21B33268000CBFED3 /* DataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtils.m; sourceTree = "<group>"; };
 		601AC62F1B3260E300641F09 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		601AC6301B3260E300641F09 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		60DA286B1B349356002B281B /* CPAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAPIRequest.h; sourceTree = "<group>"; };
+		60DA286C1B349356002B281B /* CPAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAPIRequest.m; sourceTree = "<group>"; };
 		60F32C961B31FF7300BDCA16 /* Catchpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catchpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F32C9A1B31FF7300BDCA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60F32C9B1B31FF7300BDCA16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 			children = (
 				60F32CC31B32059800BDCA16 /* CPAPIManager.h */,
 				60F32CC41B32059800BDCA16 /* CPAPIManager.m */,
+				60DA286B1B349356002B281B /* CPAPIRequest.h */,
+				60DA286C1B349356002B281B /* CPAPIRequest.m */,
 				60F32CBF1B32002E00BDCA16 /* CPToken.h */,
 				60F32CC01B32002E00BDCA16 /* CPToken.m */,
 			);
@@ -331,6 +336,7 @@
 				60F32CA21B31FF7300BDCA16 /* ViewController.m in Sources */,
 				601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */,
 				60F32CC51B32059800BDCA16 /* CPAPIManager.m in Sources */,
+				60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */,
 				60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */,
 				60FE435E1B33516600109D14 /* TimeUtils.m in Sources */,
 				60F32C9C1B31FF7300BDCA16 /* main.m in Sources */,

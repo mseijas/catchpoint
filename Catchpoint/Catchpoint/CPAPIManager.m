@@ -12,7 +12,8 @@
 #import "CPAPIManager.h"
 #import "CPToken.h"
 
-
+NSString * const apiVersion = @"1";
+NSString * const baseURL = @"https://io.catchpoint.com/ui/api";
 NSString * const clientID = @"RY-b-jQ9lcHWSsq";
 NSString * const clientSecret = @"6156945d-25b1-44be-9f0b-8208db62fc45";
 
@@ -27,7 +28,8 @@ NSString * const clientSecret = @"6156945d-25b1-44be-9f0b-8208db62fc45";
     
     NSError *error;
     
-    NSData *data = [manager syncPOST:@"https://io.catchpoint.com/ui/api/token" parameters:parameters operation:NULL error:&error];
+    NSString *requestURI = [NSString stringWithFormat:@"%@/token", baseURL];
+    NSData *data = [manager syncPOST:requestURI parameters:parameters operation:NULL error:&error];
     
     
     if (error) {
@@ -41,6 +43,9 @@ NSString * const clientSecret = @"6156945d-25b1-44be-9f0b-8208db62fc45";
 }
 
 + (id)GET:(NSString *)uri {
+    
+    NSLog(@"Processing GET: %@", uri);
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -65,6 +70,20 @@ NSString * const clientSecret = @"6156945d-25b1-44be-9f0b-8208db62fc45";
     }
     
     return nil;
+}
+
++ (id)apiGET:(NSString *)request {
+    NSString *requestURI = [NSString stringWithFormat:@"%@%@", [self apiURL], request];
+    return [self GET:requestURI];
+}
+
++ (NSString *)apiVersion {
+    return apiVersion;
+}
+
++ (NSString *)apiURL {
+    NSString *apiURL = [NSString stringWithFormat:@"%@/v%@", baseURL, apiVersion];
+    return apiURL;
 }
 
 @end

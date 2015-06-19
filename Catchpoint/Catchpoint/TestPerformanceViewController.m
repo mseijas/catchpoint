@@ -9,6 +9,7 @@
 #import <FSLineChart.h>
 #import "CPAPIManager.h"
 #import "TimeUtils.h"
+#import "DataUtils.h"
 
 #import "TestPerformanceViewController.h"
 
@@ -29,7 +30,7 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    self.data = [self getDataForTest:@"33621"];
+    self.data = [self getDataForTest:@"33621,33611"];
     
     
     [self.view addGestureRecognizer:
@@ -104,6 +105,8 @@
     NSLog(@"Geting data for test %@", testId);
     
     NSDictionary *rawData = [self getRawDataForTest:testId];
+    
+//    NSLog(@"RAW DATA \n%@", [DataUtils dataToJSON:rawData]);
     
     NSArray *items = rawData[@"detail"][@"items"];
     
