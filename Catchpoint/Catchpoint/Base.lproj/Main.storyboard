@@ -74,7 +74,7 @@
                                     <action selector="drawChart:" destination="ibq-0b-DRf" eventType="touchUpInside" id="utn-hW-dBl"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-J6-Fgc" customClass="FSLineChart">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-J6-Fgc">
                                 <rect key="frame" x="0.0" y="185" width="375" height="291"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -106,7 +106,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="chart" destination="HlO-J6-Fgc" id="wfC-IJ-F8H"/>
+                        <outlet property="chartView" destination="HlO-J6-Fgc" id="9Gf-Lg-mb6"/>
                         <outlet property="testIdField" destination="WeZ-8H-jef" id="4Vi-wQ-CkL"/>
                         <outlet property="testLabel" destination="WXO-mr-PYg" id="HWY-On-ida"/>
                     </connections>

@@ -15,7 +15,9 @@
 
 @interface TestPerformanceViewController ()
 
-@property (weak, nonatomic) IBOutlet FSLineChart *chart;
+
+@property (weak, nonatomic) IBOutlet UIView *chartView;
+@property (strong, nonatomic) FSLineChart *chart;
 @property (weak, nonatomic) NSArray *data;
 @property (weak, nonatomic) NSString *testName;
 
@@ -28,11 +30,24 @@
     
     // Do any additional setup after loading the view.
     self.data = [self getDataForTest:@"33621"];
-    [self updateChart];
+    
     
     [self.view addGestureRecognizer:
      [[UITapGestureRecognizer alloc] initWithTarget:self
                                              action:@selector(hideKeyboard:)]];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    FSLineChart *chart = [[FSLineChart alloc] initWithFrame:CGRectMake(20, 260, [UIScreen mainScreen].bounds.size.width - 40, 166)];
+    
+    self.chart = chart;
+    
+    [self.chartView addSubview:self.chart];
+//    [self.chart addSubview:chart];
+    
+    [self updateChart];
 }
 
 - (IBAction)hideKeyboard:(id)sender {
