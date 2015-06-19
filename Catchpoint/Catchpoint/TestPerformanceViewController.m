@@ -29,7 +29,6 @@
 @implementation TestPerformanceViewController
 
 - (void)viewDidLoad {
-    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
     // test2: 33621, 33611
@@ -67,11 +66,13 @@
 - (void)updateChart {
     NSLog(@"UPDATING CHART");
     
-    self.chart.verticalGridStep = 5;
-    self.chart.horizontalGridStep = 5;
+    self.chart.verticalGridStep = 4;
+    self.chart.horizontalGridStep = 4;
+    
+    NSArray *timeStamps = [CPParser getTimeStampFromSyntheticData:self.data];
     
     self.chart.labelForIndex = ^(NSUInteger item) {
-        return [TimeUtils formatTime:[TimeUtils utcStringToDate:self.data[item][@"dimension"][@"name"]]];
+        return [TimeUtils formatTime:[TimeUtils utcStringToDate:timeStamps[item]]];
     };
     
     self.chart.labelForValue = ^(CGFloat value) {

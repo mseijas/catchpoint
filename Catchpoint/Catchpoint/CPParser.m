@@ -37,6 +37,21 @@
     return nil;
 }
 
++ (NSArray *)getTimeStampFromSyntheticData:(NSArray *)data {
+    if (data) {
+        NSMutableArray *timeData = [[NSMutableArray alloc] init];
+        for (int i=0; i < data.count; i++) {
+            NSString *timeStamp = data[i][@"dimension"][@"name"];
+            
+            // NSLog(@"Timestamp: %@", timeStamp);
+            [timeData addObject:timeStamp];
+        }
+        
+        return timeData;
+    }
+    return nil;
+}
+
 
 
 @end

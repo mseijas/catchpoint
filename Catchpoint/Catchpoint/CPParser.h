@@ -13,5 +13,6 @@
 + (NSString *)getTestNameFromSyntheticData:(NSArray *)data;
 
 + (NSArray *)getMetric:(int)metricId fromSyntheticData:(NSArray *)data;
++ (NSArray *)getTimeStampFromSyntheticData:(NSArray *)data;
 
 @end
