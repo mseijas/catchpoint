@@ -12,29 +12,36 @@
 
 @implementation CPAPIRequest
 
-- (NSDictionary *)getPerformanceForTest:(NSString *)testId {
++ (NSDictionary *)getPerformanceForTest:(NSString *)testId {
     
-    NSString *requestURI = [NSString stringWithFormat:@"https://io.catchpoint.com/ui/api/v%@/performance/raw?tests=%@", [CPAPIManager apiVersion], testId];
+    NSString *requestURI = [NSString stringWithFormat:@"/performance/raw?tests=%@", testId];
+    
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
+    
+    return rawData;
+}
+
++ (NSDictionary *)getFavoriteChartList {
+    
+    NSString *requestURI = @"/performance/favoriteCharts";
     
     NSDictionary *rawData = [CPAPIManager GET:requestURI];
     
     return rawData;
 }
 
-- (NSDictionary *)getFavoriteChartList {
++ (NSDictionary *)getFavoriteChartDetails:(NSString *)favoriteId {
     
-    NSString *requestURI = [NSString stringWithFormat:@"https://io.catchpoint.com/ui/api/v%@/performance/favoriteCharts", [CPAPIManager apiVersion]];
-    NSLog(@"Processing GET: %@", requestURI);
+    NSString *requestURI = [NSString stringWithFormat:@"/performance/favoriteCharts/%@", favoriteId];
     
     NSDictionary *rawData = [CPAPIManager GET:requestURI];
     
     return rawData;
 }
 
-- (NSDictionary *)getFavoriteChartDetails:(NSString *)favoriteId {
++ (NSDictionary *)getFavoriteChartData:(NSString *)favoriteId {
     
-    NSString *requestURI = [NSString stringWithFormat:@"https://io.catchpoint.com/ui/api/v%@/performance/favoriteCharts/%@", [CPAPIManager apiVersion], favoriteId];
-    NSLog(@"Processing GET: %@", requestURI);
+    NSString *requestURI = [NSString stringWithFormat:@"/performance/favoriteCharts/%@/data", favoriteId];
     
     NSDictionary *rawData = [CPAPIManager GET:requestURI];
     
