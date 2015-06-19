@@ -48,4 +48,22 @@
     return rawData;
 }
 
++ (NSDictionary *)getNodeList {
+    
+    NSString *requestURI = @"/nodes";
+    
+    NSDictionary *rawData = [CPAPIManager GET:requestURI];
+    
+    return rawData;
+}
+
++ (NSDictionary *)getNodeDetails:(NSString *)nodeId {
+    
+    NSString *requestURI = [NSString stringWithFormat:@"/nodes/%@", nodeId];
+    
+    NSDictionary *rawData = [CPAPIManager GET:requestURI];
+    
+    return rawData;
+}
+
 @end

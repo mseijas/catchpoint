@@ -16,4 +16,7 @@
 + (NSDictionary *)getFavoriteChartDetails:(NSString *)favoriteId;
 + (NSDictionary *)getFavoriteChartData:(NSString *)favoriteId;
 
++ (NSDictionary *)getNodeList;
++ (NSDictionary *)getNodeDetails:(NSString *)nodeId;
+
 @end
