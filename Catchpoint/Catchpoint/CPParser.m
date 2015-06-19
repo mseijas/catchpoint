@@ -18,12 +18,13 @@
     return nil;
 }
 
-+ (NSArray *)getMetric:(int)metricId fromSyntheticData:(NSArray *)data {
++ (NSArray *)getMetric:(SyntheticMetricType)metricType fromSyntheticData:(NSArray *)data {
     if (data) {
+//        int metricId = [metricType intValue];
         NSMutableArray *metricData = [[NSMutableArray alloc] init];
         
         for (int i=0; i < data.count; i++) {
-            NSString *metricValueStr = data[i][@"synthetic_metrics"][metricId];
+            NSString *metricValueStr = data[i][@"synthetic_metrics"][(int)metricType];
             double metricValue = [metricValueStr doubleValue];
             
             //  NSLog(@"Metric %i: %.0f", metricId, metricValue);

@@ -7,8 +7,8 @@
 //
 
 #import "CPAPIManager.h"
-
 #import "CPAPIRequest.h"
+
 
 @implementation CPAPIRequest
 

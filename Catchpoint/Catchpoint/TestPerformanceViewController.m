@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
-#import <FSLineChart.h>
-#import "CPAPIManager.h"
+#import <FSLineChart.h> 
 #import "TimeUtils.h"
 #import "DataUtils.h"
 #import "CPAPIRequest.h"
@@ -71,7 +70,7 @@
     
     NSArray *timeStamps = [CPParser getTimeStampFromSyntheticData:self.data];
     self.testLabel.text = [CPParser getTestNameFromSyntheticData:self.data];
-    NSArray *chartData = [CPParser getMetric:17 fromSyntheticData:self.data];
+    NSArray *chartData = [CPParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:self.data];
     
     
     self.chart.labelForIndex = ^(NSUInteger item) {
