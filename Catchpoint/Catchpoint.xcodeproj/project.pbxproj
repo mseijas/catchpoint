@@ -13,6 +13,7 @@
 		601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601AC6301B3260E300641F09 /* MainTableViewController.m */; };
 		60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA286C1B349356002B281B /* CPAPIRequest.m */; };
 		60DA28701B34A7F7002B281B /* CPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA286F1B34A7F7002B281B /* CPParser.m */; };
+		60DA28731B34BFFB002B281B /* CPSyntheticMetrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA28721B34BFFB002B281B /* CPSyntheticMetrics.m */; };
 		60F32C9C1B31FF7300BDCA16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9B1B31FF7300BDCA16 /* main.m */; };
 		60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9E1B31FF7300BDCA16 /* AppDelegate.m */; };
 		60F32CA21B31FF7300BDCA16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CA11B31FF7300BDCA16 /* ViewController.m */; };
@@ -47,6 +48,8 @@
 		60DA286C1B349356002B281B /* CPAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAPIRequest.m; sourceTree = "<group>"; };
 		60DA286E1B34A7F7002B281B /* CPParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPParser.h; sourceTree = "<group>"; };
 		60DA286F1B34A7F7002B281B /* CPParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPParser.m; sourceTree = "<group>"; };
+		60DA28711B34BFFB002B281B /* CPSyntheticMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticMetrics.h; sourceTree = "<group>"; };
+		60DA28721B34BFFB002B281B /* CPSyntheticMetrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticMetrics.m; sourceTree = "<group>"; };
 		60F32C961B31FF7300BDCA16 /* Catchpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catchpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F32C9A1B31FF7300BDCA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60F32C9B1B31FF7300BDCA16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				60F32CC01B32002E00BDCA16 /* CPToken.m */,
 				60DA286E1B34A7F7002B281B /* CPParser.h */,
 				60DA286F1B34A7F7002B281B /* CPParser.m */,
+				60DA28711B34BFFB002B281B /* CPSyntheticMetrics.h */,
+				60DA28721B34BFFB002B281B /* CPSyntheticMetrics.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */,
 				60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */,
 				60FE435E1B33516600109D14 /* TimeUtils.m in Sources */,
+				60DA28731B34BFFB002B281B /* CPSyntheticMetrics.m in Sources */,
 				60F32C9C1B31FF7300BDCA16 /* main.m in Sources */,
 				6001C5701B335D1B00797F0D /* TestPerformanceViewController.m in Sources */,
 				60DA28701B34A7F7002B281B /* CPParser.m in Sources */,
