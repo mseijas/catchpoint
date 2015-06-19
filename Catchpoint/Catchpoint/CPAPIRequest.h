@@ -10,4 +10,10 @@
 
 @interface CPAPIRequest : NSObject
 
++ (NSDictionary *)getPerformanceForTest:(NSString *)testId;
+
++ (NSDictionary *)getFavoriteChartList;
++ (NSDictionary *)getFavoriteChartDetails:(NSString *)favoriteId;
++ (NSDictionary *)getFavoriteChartData:(NSString *)favoriteId;
+
 @end
