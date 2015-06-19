@@ -10,6 +10,8 @@
 #import "CPAPIManager.h"
 #import "TimeUtils.h"
 #import "DataUtils.h"
+#import "CPAPIRequest.h"
+#import "CPParser.h"
 
 #import "TestPerformanceViewController.h"
 
@@ -27,38 +29,27 @@
 @implementation TestPerformanceViewController
 
 - (void)viewDidLoad {
+    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
-    self.data = [self getDataForTest:@"33621,33611"];
-    
+    // test2: 33621, 33611
+
+    self.data = [CPAPIRequest getPerformanceForTest:@"33621" raw:NO];
     
     [self.view addGestureRecognizer:
      [[UITapGestureRecognizer alloc] initWithTarget:self
                                              action:@selector(hideKeyboard:)]];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
     
     FSLineChart *chart = [[FSLineChart alloc] initWithFrame:CGRectMake(20, 260, [UIScreen mainScreen].bounds.size.width - 40, 166)];
     
     self.chart = chart;
-    
     [self.chartView addSubview:self.chart];
-//    [self.chart addSubview:chart];
     
     [self updateChart];
 }
 
 - (IBAction)hideKeyboard:(id)sender {
-    
     [self.view endEditing:YES];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)drawChart:(id)sender {
@@ -67,13 +58,15 @@
     [self.view endEditing:YES];
     
     NSString *testId = self.testIdField.text;
-    self.data = [self getDataForTest:testId];
+    self.data = [CPAPIRequest getPerformanceForTest:testId raw:NO];
     [self.chart clearChartData];
     [self updateChart];
 }
 
 
 - (void)updateChart {
+    NSLog(@"UPDATING CHART");
+    
     self.chart.verticalGridStep = 5;
     self.chart.horizontalGridStep = 5;
     
@@ -85,52 +78,10 @@
         return [NSString stringWithFormat:@"%.f", value];
     };
     
-    NSArray *chartData = [self chartDataForMetric:17];
+    self.testLabel.text = [CPParser getTestNameFromSyntheticData:self.data];
+    NSArray *chartData = [CPParser getMetric:17 fromSyntheticData:self.data];
     
     [self.chart setChartData:chartData];
-}
-
-- (NSDictionary *)getRawDataForTest:(NSString *)testId {
-    
-    NSString *requestURI = [NSString stringWithFormat:@"https://io.catchpoint.com/ui/api/v1/performance/raw?tests=%@", testId];
-    
-    NSLog(@"Request URI: %@", requestURI);
-    
-    NSDictionary *rawData = [CPAPIManager GET:requestURI];
-    
-    return rawData;
-}
-
-- (NSArray *)getDataForTest:(NSString *)testId {
-    NSLog(@"Geting data for test %@", testId);
-    
-    NSDictionary *rawData = [self getRawDataForTest:testId];
-    
-//    NSLog(@"RAW DATA \n%@", [DataUtils dataToJSON:rawData]);
-    
-    NSArray *items = rawData[@"detail"][@"items"];
-    
-    self.testName = rawData[@"detail"][@"items"][0][@"breakdown_1"][@"name"];
-    self.testLabel.text = self.testName;
-    
-    return items;
-}
-
-- (NSArray *)chartDataForMetric:(int)metricId {
-    NSMutableArray *chartData = [[NSMutableArray alloc] init];
-    
-    for (int i=0; i < self.data.count; i++) {
-        NSString *metricValString = self.data[i][@"synthetic_metrics"][metricId];
-        double metricValue = [metricValString doubleValue];
-        
-        NSLog(@"Metric %i: %.0f", metricId, metricValue);
-        
-        NSNumber *value = [NSNumber numberWithDouble:metricValue];
-        
-        [chartData addObject:value];
-    }
-    
-    return chartData;
 }
 
 

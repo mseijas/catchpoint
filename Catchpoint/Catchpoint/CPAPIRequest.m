@@ -12,20 +12,31 @@
 
 @implementation CPAPIRequest
 
-+ (NSDictionary *)getPerformanceForTest:(NSString *)testId {
++ (id)getPerformanceForTest:(NSString *)testId raw:(BOOL)raw {
     
     NSString *requestURI = [NSString stringWithFormat:@"/performance/raw?tests=%@", testId];
     
     NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
-    return rawData;
+    if (rawData) {
+        if (raw == NO) {
+            
+            NSArray *items = rawData[@"detail"][@"items"];
+            
+            return items;
+        }
+        
+        return rawData;
+    }
+    
+    return nil;
 }
 
 + (NSDictionary *)getFavoriteChartList {
     
     NSString *requestURI = @"/performance/favoriteCharts";
     
-    NSDictionary *rawData = [CPAPIManager GET:requestURI];
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
     return rawData;
 }
@@ -34,7 +45,7 @@
     
     NSString *requestURI = [NSString stringWithFormat:@"/performance/favoriteCharts/%@", favoriteId];
     
-    NSDictionary *rawData = [CPAPIManager GET:requestURI];
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
     return rawData;
 }
@@ -43,7 +54,7 @@
     
     NSString *requestURI = [NSString stringWithFormat:@"/performance/favoriteCharts/%@/data", favoriteId];
     
-    NSDictionary *rawData = [CPAPIManager GET:requestURI];
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
     return rawData;
 }
@@ -52,7 +63,7 @@
     
     NSString *requestURI = @"/nodes";
     
-    NSDictionary *rawData = [CPAPIManager GET:requestURI];
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
     return rawData;
 }
@@ -61,7 +72,7 @@
     
     NSString *requestURI = [NSString stringWithFormat:@"/nodes/%@", nodeId];
     
-    NSDictionary *rawData = [CPAPIManager GET:requestURI];
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
     return rawData;
 }

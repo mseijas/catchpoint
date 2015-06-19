@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 #import "CPAPIManager.h"
+#import "CPAPIRequest.h"
 #import "DataUtils.h"
 #import "TimeUtils.h"
 
@@ -20,8 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSDictionary *data = [CPAPIManager apiGET:@"/performance/raw?tests=33621"];
-    NSLog(@"DATA: %@", data);
+//    NSDictionary *data = [CPAPIRequest getFavoriteChartList];
+//    NSLog(@"DATA: %@", data);
+
     
 //    NSDictionary *testData = [CPAPIManager GET:@"https://io.catchpoint.com/ui/api/v1/performance/raw?tests=33621"];
 //    
@@ -50,28 +52,6 @@
 //    }
     
     return YES;
-}
-
-- (NSDictionary *)getPerformanceForTests:(NSArray *)testIds {
-    
-    NSString *stringTestIds = [[NSString alloc] init];
-    
-    for (NSNumber *testIdNumber in testIds) {
-        int testId = (int)testIdNumber;
-        stringTestIds = [NSString stringWithFormat:@"%@,%i", stringTestIds, testId];
-    }
-    
-    NSLog(@"String test ids: %@", stringTestIds);
-    
-    return nil;
-    
-//    NSString *requestURI = [NSString stringWithFormat:@"https://io.catchpoint.com/ui/api/v1/performance/raw?tests=%@", testId];
-//    
-//    NSLog(@"Request URI: %@", requestURI);
-//    
-//    NSDictionary *rawData = [CPAPIManager GET:requestURI];
-//    
-//    return rawData;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
