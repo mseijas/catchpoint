@@ -54,7 +54,7 @@ typedef NS_ENUM(NSInteger, SyntheticMetricType) {
     SyntheticMetricNumFonts = 42,
     SyntheticMetricFontBytes = 43,
     SyntheticMetricNumOther = 44,
-    SyntheticMetricNumOtherBytes = 45,
+    SyntheticMetricOtherBytes = 45,
     SyntheticMetricPctPingPacketLoss = 46,
     SyntheticMetricPingRoundTrip = 47,
     SyntheticMetricPctAvailability = 48,
