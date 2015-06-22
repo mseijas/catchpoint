@@ -16,4 +16,6 @@
 + (NSArray *)getMetric:(SyntheticMetricType)metricType fromSyntheticData:(NSArray *)data;
 + (NSArray *)getTimeStampFromSyntheticData:(NSArray *)data;
 
++ (NSString *)metricNameForType:(SyntheticMetricType)metricType;
+
 @end

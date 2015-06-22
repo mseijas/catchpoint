@@ -54,6 +54,9 @@
     return nil;
 }
 
++ (NSString *)metricNameForType:(SyntheticMetricType)metricType {
+    return [CPSyntheticMetrics metricNameForType:metricType];
+}
 
 
 @end
