@@ -13,7 +13,7 @@
 
 import Foundation
 import CoreGraphics
-import UIKit.UIGestureRecognizer
+import UIKit
 
 /// Base class of PieChartView and RadarChartView.
 public class PieRadarChartViewBase: ChartViewBase
@@ -349,22 +349,26 @@ public class PieRadarChartViewBase: ChartViewBase
         return 0.0;
     }
     
-    /// Returns an array of SelInfo objects for the given x-index.
-    /// The SelInfo objects give information about the value at the selected index and the DataSet it belongs to.
-    public func getYValsAtIndex(xIndex: Int) -> [ChartSelInfo]
+    /// Returns an array of SelectionDetail objects for the given x-index.
+    /// The SelectionDetail objects give information about the value at the selected index and the DataSet it belongs to.
+    public func getSelectionDetailsAtIndex(xIndex: Int) -> [ChartSelectionDetail]
     {
-        var vals = [ChartSelInfo]();
+        var vals = [ChartSelectionDetail]();
         
         for (var i = 0; i < _data.dataSetCount; i++)
         {
             var dataSet = _data.getDataSetByIndex(i);
+            if (dataSet === nil || !dataSet.isHighlightEnabled)
+            {
+                continue;
+            }
             
             // extract all y-values from all DataSets at the given x-index
             var yVal = dataSet!.yValForXIndex(xIndex);
             
             if (!isnan(yVal))
             {
-                vals.append(ChartSelInfo(value: yVal, dataSetIndex: i, dataSet: dataSet!));
+                vals.append(ChartSelectionDetail(value: yVal, dataSetIndex: i, dataSet: dataSet!));
             }
         }
         
@@ -743,7 +747,7 @@ public class PieRadarChartViewBase: ChartViewBase
                 }
                 else
                 {
-                    var valsAtIndex = getYValsAtIndex(index);
+                    var valsAtIndex = getSelectionDetailsAtIndex(index);
                     
                     var dataSetIndex = 0;
                     
@@ -753,17 +757,25 @@ public class PieRadarChartViewBase: ChartViewBase
                         dataSetIndex = ChartUtils.closestDataSetIndex(valsAtIndex, value: Double(distance / (self as! RadarChartView).factor), axis: nil);
                     }
                     
-                    var h = ChartHighlight(xIndex: index, dataSetIndex: dataSetIndex);
-                    
-                    if (_lastHighlight !== nil && h == _lastHighlight)
+                    if (dataSetIndex < 0)
                     {
-                        self.highlightValue(highlight: nil, callDelegate: true);
+                        self.highlightValues(nil);
                         _lastHighlight = nil;
                     }
                     else
                     {
-                        self.highlightValue(highlight: h, callDelegate: true);
-                        _lastHighlight = h;
+                        var h = ChartHighlight(xIndex: index, dataSetIndex: dataSetIndex);
+                        
+                        if (_lastHighlight !== nil && h == _lastHighlight)
+                        {
+                            self.highlightValue(highlight: nil, callDelegate: true);
+                            _lastHighlight = nil;
+                        }
+                        else
+                        {
+                            self.highlightValue(highlight: h, callDelegate: true);
+                            _lastHighlight = h;
+                        }
                     }
                 }
             }

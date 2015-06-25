@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ibq-0b-DRf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6XS-6P-LFm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -22,7 +22,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7rh-69-iU8">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="21" id="HDs-VK-biJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -114,6 +114,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8UR-tH-a7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-568.5" y="1138.5"/>
+        </scene>
+        <!--Charts View Controller-->
+        <scene sceneID="2t0-UX-D1h">
+            <objects>
+                <viewController id="6XS-6P-LFm" customClass="ChartsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fG2-yK-y8x"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJM-ec-bdA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R33-uc-574">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trR-qG-GNq" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="trR-qG-GNq" secondAttribute="trailing" id="10i-uH-ouD"/>
+                            <constraint firstItem="trR-qG-GNq" firstAttribute="top" secondItem="R33-uc-574" secondAttribute="top" id="KTD-ve-MSn"/>
+                            <constraint firstItem="trR-qG-GNq" firstAttribute="leading" secondItem="R33-uc-574" secondAttribute="leading" id="Ul4-Ot-68h"/>
+                            <constraint firstItem="EJM-ec-bdA" firstAttribute="top" secondItem="trR-qG-GNq" secondAttribute="bottom" id="qnJ-7S-dLw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="trR-qG-GNq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="qnJ-7S-dLw"/>
+                                <exclude reference="10i-uH-ouD"/>
+                                <exclude reference="KTD-ve-MSn"/>
+                                <exclude reference="Ul4-Ot-68h"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="trR-qG-GNq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="qnJ-7S-dLw"/>
+                                <include reference="10i-uH-ouD"/>
+                                <include reference="KTD-ve-MSn"/>
+                                <include reference="Ul4-Ot-68h"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="chartView" destination="trR-qG-GNq" id="pRe-CQ-zfZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gem-lu-Ncb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-568.5" y="1691.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oBD-21-30r">
