@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, SyntheticMetricType) {
     SyntheticMetricDNS = 0,
@@ -73,8 +74,10 @@ typedef NS_ENUM(NSInteger, SyntheticMetricType) {
     SyntheticMetricNumTestErrors = 61
 };
 
+
 @interface CPSyntheticMetrics : NSObject
 
 + (NSString *)metricNameForType:(SyntheticMetricType)metricType;
++ (UIColor *)metricColorForType:(SyntheticMetricType)metricType;
 
 @end

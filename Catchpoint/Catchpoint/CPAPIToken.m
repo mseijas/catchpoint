@@ -1,5 +1,5 @@
 //
-//  CPToken.m
+//  CPAPIToken.m
 //  Catchpoint
 //
 //  Created by Matias on 6/17/15.
@@ -8,10 +8,10 @@
 
 #import <AFNetworking.h>
 
-#import "CPToken.h"
+#import "CPAPIToken.h"
 #import "CPAPIManager.h"
 
-@interface CPToken ()
+@interface CPAPIToken ()
 
 @property (nonatomic, strong) NSString *privateToken;
 @property (nonatomic) int expiration;
@@ -21,11 +21,11 @@
 @end
 
 
-@implementation CPToken
+@implementation CPAPIToken
 
 + (instancetype)sharedToken
 {
-    static CPToken *sharedToken = nil;
+    static CPAPIToken *sharedToken = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -38,7 +38,7 @@
 - (instancetype)init
 {
     [NSException raise:@"Singleton"
-                format:@"Use +[CPToken sharedToken]"];
+                format:@"Use +[CPAPIToken sharedToken]"];
     
     return nil;
 }
@@ -57,14 +57,14 @@
 + (NSString *)token {
     // NSLog(@"Accessing token...");
 
-    BOOL isExpired = [[CPToken sharedToken] isTokenExpired];
+    BOOL isExpired = [[CPAPIToken sharedToken] isTokenExpired];
     
     if (isExpired == YES) {
-        [[CPToken sharedToken] generateToken];
-        return [CPToken sharedToken].privateToken;
+        [[CPAPIToken sharedToken] generateToken];
+        return [CPAPIToken sharedToken].privateToken;
     }
     
-    return [CPToken sharedToken].privateToken;
+    return [CPAPIToken sharedToken].privateToken;
 }
 
 - (void)generateToken {

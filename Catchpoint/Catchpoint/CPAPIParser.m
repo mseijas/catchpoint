@@ -1,14 +1,14 @@
 //
-//  CPParser.m
+//  CPAPIParser.m
 //  Catchpoint
 //
 //  Created by Matias on 6/19/15.
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
-#import "CPParser.h"
+#import "CPAPIParser.h"
 
-@implementation CPParser
+@implementation CPAPIParser
 
 + (NSString *)getTestNameFromSyntheticData:(NSArray *)data {
     if (data) {

@@ -10,7 +10,7 @@
 #import "TimeUtils.h"
 #import "DataUtils.h"
 #import "CPAPIRequest.h"
-#import "CPParser.h"
+#import "CPAPIParser.h"
 
 #import "TestPerformanceViewController.h"
 
@@ -68,9 +68,9 @@
     self.chart.verticalGridStep = 4;
     self.chart.horizontalGridStep = 4;
     
-    NSArray *timeStamps = [CPParser getTimeStampFromSyntheticData:self.data];
-    self.testLabel.text = [CPParser getTestNameFromSyntheticData:self.data];
-    NSArray *chartData = [CPParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:self.data];
+    NSArray *timeStamps = [CPAPIParser getTimeStampFromSyntheticData:self.data];
+    self.testLabel.text = [CPAPIParser getTestNameFromSyntheticData:self.data];
+    NSArray *chartData = [CPAPIParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:self.data];
     
     
     self.chart.labelForIndex = ^(NSUInteger item) {

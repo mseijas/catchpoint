@@ -16,7 +16,7 @@
 		60D1A51B1B3B669200E9CDAC /* ChartsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1A51A1B3B669200E9CDAC /* ChartsViewController.m */; };
 		60D1A51E1B3B688300E9CDAC /* Catchpoint-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D1A51D1B3B688300E9CDAC /* Catchpoint-Swift.swift */; };
 		60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA286C1B349356002B281B /* CPAPIRequest.m */; };
-		60DA28701B34A7F7002B281B /* CPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA286F1B34A7F7002B281B /* CPParser.m */; };
+		60DA28701B34A7F7002B281B /* CPAPIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA286F1B34A7F7002B281B /* CPAPIParser.m */; };
 		60DA28731B34BFFB002B281B /* CPSyntheticMetrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA28721B34BFFB002B281B /* CPSyntheticMetrics.m */; };
 		60F32C9C1B31FF7300BDCA16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9B1B31FF7300BDCA16 /* main.m */; };
 		60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32C9E1B31FF7300BDCA16 /* AppDelegate.m */; };
@@ -25,7 +25,7 @@
 		60F32CA71B31FF7300BDCA16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60F32CA61B31FF7300BDCA16 /* Images.xcassets */; };
 		60F32CAA1B31FF7300BDCA16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F32CA81B31FF7300BDCA16 /* LaunchScreen.xib */; };
 		60F32CB61B31FF7300BDCA16 /* CatchpointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CB51B31FF7300BDCA16 /* CatchpointTests.m */; };
-		60F32CC11B32002E00BDCA16 /* CPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CC01B32002E00BDCA16 /* CPToken.m */; };
+		60F32CC11B32002E00BDCA16 /* CPAPIToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CC01B32002E00BDCA16 /* CPAPIToken.m */; };
 		60F32CC51B32059800BDCA16 /* CPAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F32CC41B32059800BDCA16 /* CPAPIManager.m */; };
 		60FE435E1B33516600109D14 /* TimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FE435D1B33516600109D14 /* TimeUtils.m */; };
 /* End PBXBuildFile section */
@@ -87,8 +87,8 @@
 		60D1A5241B3B6AF400E9CDAC /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Downloads/ios-charts-master/Charts/build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 		60DA286B1B349356002B281B /* CPAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAPIRequest.h; sourceTree = "<group>"; };
 		60DA286C1B349356002B281B /* CPAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAPIRequest.m; sourceTree = "<group>"; };
-		60DA286E1B34A7F7002B281B /* CPParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPParser.h; sourceTree = "<group>"; };
-		60DA286F1B34A7F7002B281B /* CPParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPParser.m; sourceTree = "<group>"; };
+		60DA286E1B34A7F7002B281B /* CPAPIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAPIParser.h; sourceTree = "<group>"; };
+		60DA286F1B34A7F7002B281B /* CPAPIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAPIParser.m; sourceTree = "<group>"; };
 		60DA28711B34BFFB002B281B /* CPSyntheticMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticMetrics.h; sourceTree = "<group>"; };
 		60DA28721B34BFFB002B281B /* CPSyntheticMetrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticMetrics.m; sourceTree = "<group>"; };
 		60F32C961B31FF7300BDCA16 /* Catchpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catchpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,8 +104,8 @@
 		60F32CAF1B31FF7300BDCA16 /* CatchpointTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatchpointTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F32CB41B31FF7300BDCA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60F32CB51B31FF7300BDCA16 /* CatchpointTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchpointTests.m; sourceTree = "<group>"; };
-		60F32CBF1B32002E00BDCA16 /* CPToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPToken.h; sourceTree = "<group>"; };
-		60F32CC01B32002E00BDCA16 /* CPToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPToken.m; sourceTree = "<group>"; };
+		60F32CBF1B32002E00BDCA16 /* CPAPIToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAPIToken.h; sourceTree = "<group>"; };
+		60F32CC01B32002E00BDCA16 /* CPAPIToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAPIToken.m; sourceTree = "<group>"; };
 		60F32CC31B32059800BDCA16 /* CPAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAPIManager.h; sourceTree = "<group>"; };
 		60F32CC41B32059800BDCA16 /* CPAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAPIManager.m; sourceTree = "<group>"; };
 		60FE434D1B3329F500109D14 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
@@ -242,10 +242,10 @@
 				60F32CC41B32059800BDCA16 /* CPAPIManager.m */,
 				60DA286B1B349356002B281B /* CPAPIRequest.h */,
 				60DA286C1B349356002B281B /* CPAPIRequest.m */,
-				60F32CBF1B32002E00BDCA16 /* CPToken.h */,
-				60F32CC01B32002E00BDCA16 /* CPToken.m */,
-				60DA286E1B34A7F7002B281B /* CPParser.h */,
-				60DA286F1B34A7F7002B281B /* CPParser.m */,
+				60F32CBF1B32002E00BDCA16 /* CPAPIToken.h */,
+				60F32CC01B32002E00BDCA16 /* CPAPIToken.m */,
+				60DA286E1B34A7F7002B281B /* CPAPIParser.h */,
+				60DA286F1B34A7F7002B281B /* CPAPIParser.m */,
 				60DA28711B34BFFB002B281B /* CPSyntheticMetrics.h */,
 				60DA28721B34BFFB002B281B /* CPSyntheticMetrics.m */,
 			);
@@ -418,7 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60F32CC11B32002E00BDCA16 /* CPToken.m in Sources */,
+				60F32CC11B32002E00BDCA16 /* CPAPIToken.m in Sources */,
 				60D1A51B1B3B669200E9CDAC /* ChartsViewController.m in Sources */,
 				600C65A31B33268000CBFED3 /* DataUtils.m in Sources */,
 				60F32CA21B31FF7300BDCA16 /* ViewController.m in Sources */,
@@ -431,7 +431,7 @@
 				60D1A51E1B3B688300E9CDAC /* Catchpoint-Swift.swift in Sources */,
 				60F32C9C1B31FF7300BDCA16 /* main.m in Sources */,
 				6001C5701B335D1B00797F0D /* TestPerformanceViewController.m in Sources */,
-				60DA28701B34A7F7002B281B /* CPParser.m in Sources */,
+				60DA28701B34A7F7002B281B /* CPAPIParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

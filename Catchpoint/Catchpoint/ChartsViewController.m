@@ -8,7 +8,7 @@
 
 #import "ChartsViewController.h"
 #import "CPAPIRequest.h"
-#import "CPParser.h"
+#import "CPAPIParser.h"
 
 @import Charts;
 
@@ -25,8 +25,8 @@
 
     NSArray *data = [CPAPIRequest getPerformanceForTest:@"33621" raw:NO];
     
-    NSArray *webResponse = [CPParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:data];
-    
+    NSArray *webResponse = [CPAPIParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:data];
+    NSArray *response = [CPAPIParser getMetric:SyntheticMetricResponse fromSyntheticData:data];
     
     // Generate x values
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
@@ -37,27 +37,36 @@
     
     // Generate y values
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
-
+    NSMutableArray *yValsResponse = [[NSMutableArray alloc] init];
+    
     for (int i = 0; i < webResponse.count; i++) {
         
         NSNumber *webResponseNum = webResponse[i];
         double webResponseValue = (double)[webResponseNum doubleValue];
         
+        NSNumber *responseNum = response[i];
+        double responseValue = (double)[responseNum doubleValue];
+        
         [yVals addObject:[[ChartDataEntry alloc] initWithValue:webResponseValue xIndex:i]];
+        [yValsResponse addObject:[[ChartDataEntry alloc] initWithValue:responseValue xIndex:i]];
     }
     
     // Generate line chart data set
     LineChartDataSet *webResponseDataSet = [[LineChartDataSet alloc] initWithYVals:yVals label:@"Webpage Response"];
-    [webResponseDataSet setLineWidth:3.5];
+    [webResponseDataSet setLineWidth:3.0];
     [webResponseDataSet setDrawCirclesEnabled:NO];
+    [webResponseDataSet setColor:[UIColor colorWithRed:116.0/255.0 green:123.0/255.0 blue:204.0/255.0 alpha:1.0]];
 //    webResponseDataSet.drawCubicEnabled = YES;
     
 //    webResponseDataSet.colors = @[[UIColor colorWithRed:230.0/255.0 green:126.0/255.0 blue:34.0/255.0 alpha:1.0]];
+    
+    LineChartDataSet *responseDataSet = [[LineChartDataSet alloc] initWithYVals:yValsResponse label:@"Response"];
     
     
     // Add all data sets to dataSet array
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:webResponseDataSet];
+    [dataSets addObject:responseDataSet];
     
     
     // Generate line chart data object
@@ -73,6 +82,8 @@
     // Style the chart object
     self.chartView.xAxis.labelPosition = ChartLimitLabelPositionRight;
     [self.chartView setDrawBordersEnabled:YES];
+    self.chartView.borderColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.35];
+//    self.chartView.borderLineWidth = 0.8;
     [self.chartView setDrawGridBackgroundEnabled:NO];
     [self.chartView setDragEnabled:NO];
     [self.chartView setHighlightEnabled:NO];
@@ -90,14 +101,16 @@
     
     ChartYAxis *leftYAxis = self.chartView.leftAxis;
     [leftYAxis setDrawLabelsEnabled:YES];
-    leftYAxis.labelCount = 4;
+    [leftYAxis setDrawAxisLineEnabled:NO];
+//    leftYAxis.labelCount = 4;
     [leftYAxis setDrawGridLinesEnabled:NO];
     leftYAxis.startAtZeroEnabled = NO;
     leftYAxis.labelPosition = ChartLimitLabelPositionLeft;
     
-    
+
     ChartXAxis *xAxis = self.chartView.xAxis;
     [xAxis setDrawGridLinesEnabled:NO];
+    [xAxis setDrawAxisLineEnabled:NO];
     
     
 

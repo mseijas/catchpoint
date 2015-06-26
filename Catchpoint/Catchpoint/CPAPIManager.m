@@ -10,7 +10,7 @@
 #import <AFHTTPRequestOperationManager+Synchronous.h>
 
 #import "CPAPIManager.h"
-#import "CPToken.h"
+#import "CPAPIToken.h"
 
 NSString * const apiVersion = @"1";
 NSString * const baseURL = @"https://io.catchpoint.com/ui/api";
@@ -55,7 +55,7 @@ NSString * const clientSecret = @"6156945d-25b1-44be-9f0b-8208db62fc45";
     
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [manager.requestSerializer setValue:[CPToken token] forHTTPHeaderField:@"Authorization"];
+    [manager.requestSerializer setValue:[CPAPIToken token] forHTTPHeaderField:@"Authorization"];
     
     NSError *error;
     

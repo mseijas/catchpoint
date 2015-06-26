@@ -1,5 +1,5 @@
 //
-//  CPToken.h
+//  CPAPIToken.h
 //  Catchpoint
 //
 //  Created by Matias on 6/17/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CPToken : NSObject
+@interface CPAPIToken : NSObject
 
 @property (nonatomic, weak, readonly) NSString *token;
 

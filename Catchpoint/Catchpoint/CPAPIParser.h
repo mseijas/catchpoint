@@ -1,5 +1,5 @@
 //
-//  CPParser.h
+//  CPAPIParser.h
 //  Catchpoint
 //
 //  Created by Matias on 6/19/15.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CPSyntheticMetrics.h"
 
-@interface CPParser : NSObject
+@interface CPAPIParser : NSObject
 
 + (NSString *)getTestNameFromSyntheticData:(NSArray *)data;
 
