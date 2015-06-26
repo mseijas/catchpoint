@@ -10,7 +10,7 @@
 
 @implementation CPSyntheticChart
 
-+ (LineChartView *)initWithChart:(LineChartView *)chartView data:(NSArray *)data includeMetrics:(NSArray *)metrics {
++ (LineChartView *)initChart:(LineChartView *)chartView withData:(NSArray *)data includeMetrics:(NSArray *)metrics {
     
 //    LineChartView *chartView = [[LineChartView alloc] init];
     

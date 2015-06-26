@@ -131,39 +131,58 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJ3-h4-7Vc" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="trR-qG-GNq" firstAttribute="trailing" secondItem="R33-uc-574" secondAttribute="trailingMargin" id="2Vd-eO-bCV"/>
+                            <constraint firstItem="TJ3-h4-7Vc" firstAttribute="trailing" secondItem="R33-uc-574" secondAttribute="trailingMargin" id="Dnp-Xk-S0h"/>
+                            <constraint firstItem="EJM-ec-bdA" firstAttribute="top" secondItem="TJ3-h4-7Vc" secondAttribute="bottom" constant="93" id="KTP-NP-KYk"/>
+                            <constraint firstItem="TJ3-h4-7Vc" firstAttribute="leading" secondItem="R33-uc-574" secondAttribute="leadingMargin" id="PB1-mg-u1t"/>
                             <constraint firstItem="trR-qG-GNq" firstAttribute="leading" secondItem="R33-uc-574" secondAttribute="leadingMargin" id="VMX-ph-pp8"/>
                             <constraint firstItem="EJM-ec-bdA" firstAttribute="top" secondItem="trR-qG-GNq" secondAttribute="bottom" constant="356" id="WCW-Of-opw"/>
                             <constraint firstItem="trR-qG-GNq" firstAttribute="top" secondItem="fG2-yK-y8x" secondAttribute="bottom" constant="69" id="aCW-hv-yxo"/>
+                            <constraint firstItem="TJ3-h4-7Vc" firstAttribute="top" secondItem="trR-qG-GNq" secondAttribute="bottom" constant="41" id="kip-2T-idP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="trR-qG-GNq"/>
+                                <exclude reference="TJ3-h4-7Vc"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="2Vd-eO-bCV"/>
                                 <exclude reference="VMX-ph-pp8"/>
                                 <exclude reference="aCW-hv-yxo"/>
+                                <exclude reference="Dnp-Xk-S0h"/>
+                                <exclude reference="PB1-mg-u1t"/>
+                                <exclude reference="kip-2T-idP"/>
+                                <exclude reference="KTP-NP-KYk"/>
                                 <exclude reference="WCW-Of-opw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="trR-qG-GNq"/>
+                                <include reference="TJ3-h4-7Vc"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="2Vd-eO-bCV"/>
                                 <include reference="VMX-ph-pp8"/>
                                 <include reference="aCW-hv-yxo"/>
+                                <include reference="Dnp-Xk-S0h"/>
+                                <include reference="PB1-mg-u1t"/>
+                                <include reference="kip-2T-idP"/>
+                                <include reference="KTP-NP-KYk"/>
                                 <include reference="WCW-Of-opw"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="availabilityChartView" destination="TJ3-h4-7Vc" id="wWy-RN-0Wb"/>
                         <outlet property="chartView" destination="trR-qG-GNq" id="pRe-CQ-zfZ"/>
                     </connections>
                 </viewController>
