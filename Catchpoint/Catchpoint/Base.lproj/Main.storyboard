@@ -134,20 +134,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="trR-qG-GNq" secondAttribute="trailing" id="10i-uH-ouD"/>
-                            <constraint firstItem="trR-qG-GNq" firstAttribute="top" secondItem="R33-uc-574" secondAttribute="top" id="KTD-ve-MSn"/>
-                            <constraint firstItem="trR-qG-GNq" firstAttribute="leading" secondItem="R33-uc-574" secondAttribute="leading" id="Ul4-Ot-68h"/>
-                            <constraint firstItem="EJM-ec-bdA" firstAttribute="top" secondItem="trR-qG-GNq" secondAttribute="bottom" id="qnJ-7S-dLw"/>
+                            <constraint firstItem="trR-qG-GNq" firstAttribute="trailing" secondItem="R33-uc-574" secondAttribute="trailingMargin" id="2Vd-eO-bCV"/>
+                            <constraint firstItem="trR-qG-GNq" firstAttribute="leading" secondItem="R33-uc-574" secondAttribute="leadingMargin" id="VMX-ph-pp8"/>
+                            <constraint firstItem="EJM-ec-bdA" firstAttribute="top" secondItem="trR-qG-GNq" secondAttribute="bottom" constant="356" id="WCW-Of-opw"/>
+                            <constraint firstItem="trR-qG-GNq" firstAttribute="top" secondItem="fG2-yK-y8x" secondAttribute="bottom" constant="69" id="aCW-hv-yxo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="trR-qG-GNq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="qnJ-7S-dLw"/>
-                                <exclude reference="10i-uH-ouD"/>
-                                <exclude reference="KTD-ve-MSn"/>
-                                <exclude reference="Ul4-Ot-68h"/>
+                                <exclude reference="2Vd-eO-bCV"/>
+                                <exclude reference="VMX-ph-pp8"/>
+                                <exclude reference="aCW-hv-yxo"/>
+                                <exclude reference="WCW-Of-opw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -155,10 +155,10 @@
                                 <include reference="trR-qG-GNq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="qnJ-7S-dLw"/>
-                                <include reference="10i-uH-ouD"/>
-                                <include reference="KTD-ve-MSn"/>
-                                <include reference="Ul4-Ot-68h"/>
+                                <include reference="2Vd-eO-bCV"/>
+                                <include reference="VMX-ph-pp8"/>
+                                <include reference="aCW-hv-yxo"/>
+                                <include reference="WCW-Of-opw"/>
                             </mask>
                         </variation>
                     </view>
