@@ -10,9 +10,9 @@
 
 @implementation CPSyntheticChart
 
-+ (LineChartView *)initWithData:(NSArray *)data includeMetrics:(NSArray *)metrics {
++ (LineChartView *)initWithChart:(LineChartView *)chartView data:(NSArray *)data includeMetrics:(NSArray *)metrics {
     
-    LineChartView *chartView = [[LineChartView alloc] init];
+//    LineChartView *chartView = [[LineChartView alloc] init];
     
     
     // Get Time Stamps array and use it to generate labels for X Values
@@ -24,15 +24,19 @@
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     
     for (int i=0 ; i < metrics.count ; i++) {
-        SyntheticMetricType metricType = (SyntheticMetricType)metrics[i];
+        SyntheticMetricType metricType = (SyntheticMetricType)[metrics[i] intValue];
+        NSLog(@"Synthetic Metric Type: %ld", metricType);
         
         NSArray *metricData = [CPAPIParser getMetric:metricType fromSyntheticData:data];
         NSMutableArray *yValues = [[NSMutableArray alloc] init];
         
         for (NSNumber *metricNum in metricData) {
             double metricValue = (double)[metricNum doubleValue];
+            NSLog(@"metric value = %f", metricValue);
+            
             [yValues addObject:[[ChartDataEntry alloc] initWithValue:metricValue xIndex:[metricData indexOfObject:metricNum]]];
         }
+        NSLog(@"YValues: %@", yValues);
         
         LineChartDataSet *metricDataSet = [[LineChartDataSet alloc] initWithYVals:yValues label:[CPAPIParser metricNameForType:metricType]];
         [metricDataSet setColor:[CPAPIParser metricColorForType:metricType]];
@@ -40,11 +44,12 @@
         metricDataSet.drawCirclesEnabled = NO;
         
         [dataSets addObject:metricDataSet];
+        NSLog(@"DATA SETS: %@", dataSets);
     }
     
     LineChartData *chartData = [[LineChartData alloc] initWithXVals:xValues dataSets:dataSets];
     [chartData setDrawValues:NO];
-    
+    NSLog(@"chart data: %@", chartData);
     
     // Associate chartData view chart
     chartView.data = chartData;

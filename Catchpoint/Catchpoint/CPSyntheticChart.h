@@ -11,6 +11,6 @@
 
 @interface CPSyntheticChart : NSObject
 
-+ (LineChartView *)initWithData:(NSArray *)data includeMetrics:(NSArray *)metrics;
++ (LineChartView *)initWithChart:(LineChartView *)chartView data:(NSArray *)data includeMetrics:(NSArray *)metrics;
 
 @end
