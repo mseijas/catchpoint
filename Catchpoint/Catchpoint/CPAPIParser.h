@@ -25,5 +25,6 @@ typedef NS_ENUM(NSInteger, TimeStampFormatOptions) {
 + (NSArray *)getLocalTimeStampFromSyntheticData:(NSArray *)data withOptions:(TimeStampFormatOptions)formatOption;
 
 + (NSString *)metricNameForType:(SyntheticMetricType)metricType;
++ (UIColor *)metricColorForType:(SyntheticMetricType)metricType;
 
 @end

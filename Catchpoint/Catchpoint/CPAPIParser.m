@@ -99,5 +99,8 @@
     return [CPSyntheticMetrics metricNameForType:metricType];
 }
 
++ (UIColor *)metricColorForType:(SyntheticMetricType)metricType {
+    return [CPSyntheticMetrics metricColorForType:metricType];
+}
 
 @end

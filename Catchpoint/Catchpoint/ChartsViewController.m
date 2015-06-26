@@ -39,18 +39,18 @@
     
     // Generate y values
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
-    NSMutableArray *yValsResponse = [[NSMutableArray alloc] init];
+//    NSMutableArray *yValsResponse = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < webResponse.count; i++) {
         
         NSNumber *webResponseNum = webResponse[i];
         double webResponseValue = (double)[webResponseNum doubleValue];
         
-        NSNumber *responseNum = response[i];
-        double responseValue = (double)[responseNum doubleValue];
+//        NSNumber *responseNum = response[i];
+//        double responseValue = (double)[responseNum doubleValue];
         
         [yVals addObject:[[ChartDataEntry alloc] initWithValue:webResponseValue xIndex:i]];
-        [yValsResponse addObject:[[ChartDataEntry alloc] initWithValue:responseValue xIndex:i]];
+//        [yValsResponse addObject:[[ChartDataEntry alloc] initWithValue:responseValue xIndex:i]];
     }
     
     // Generate line chart data set
@@ -62,13 +62,13 @@
     
 //    webResponseDataSet.colors = @[[UIColor colorWithRed:230.0/255.0 green:126.0/255.0 blue:34.0/255.0 alpha:1.0]];
     
-    LineChartDataSet *responseDataSet = [[LineChartDataSet alloc] initWithYVals:yValsResponse label:@"Response"];
+//    LineChartDataSet *responseDataSet = [[LineChartDataSet alloc] initWithYVals:yValsResponse label:@"Response"];
     
     
     // Add all data sets to dataSet array
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:webResponseDataSet];
-    [dataSets addObject:responseDataSet];
+//    [dataSets addObject:responseDataSet];
     
     
     // Generate line chart data object
@@ -85,7 +85,6 @@
     self.chartView.xAxis.labelPosition = ChartLimitLabelPositionRight;
     [self.chartView setDrawBordersEnabled:YES];
     self.chartView.borderColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.35];
-//    self.chartView.borderLineWidth = 0.8;
     [self.chartView setDrawGridBackgroundEnabled:NO];
     [self.chartView setDragEnabled:NO];
     [self.chartView setHighlightEnabled:NO];
@@ -104,7 +103,6 @@
     ChartYAxis *leftYAxis = self.chartView.leftAxis;
     [leftYAxis setDrawLabelsEnabled:YES];
     [leftYAxis setDrawAxisLineEnabled:NO];
-//    leftYAxis.labelCount = 4;
     [leftYAxis setDrawGridLinesEnabled:NO];
     leftYAxis.startAtZeroEnabled = NO;
     leftYAxis.labelPosition = ChartLimitLabelPositionLeft;
