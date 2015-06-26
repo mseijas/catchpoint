@@ -68,7 +68,7 @@
     self.chart.verticalGridStep = 4;
     self.chart.horizontalGridStep = 4;
     
-    NSArray *timeStamps = [CPAPIParser getTimeStampFromSyntheticData:self.data];
+    NSArray *timeStamps = [CPAPIParser getUTCTimeObjectsFromSyntheticData:self.data];
     self.testLabel.text = [CPAPIParser getTestNameFromSyntheticData:self.data];
     NSArray *chartData = [CPAPIParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:self.data];
     

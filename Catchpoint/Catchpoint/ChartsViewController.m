@@ -27,12 +27,14 @@
     
     NSArray *webResponse = [CPAPIParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:data];
     NSArray *response = [CPAPIParser getMetric:SyntheticMetricResponse fromSyntheticData:data];
+    NSArray *timeStamps = [CPAPIParser getLocalTimeStampFromSyntheticData:data withOptions:TimeStampFormatTime];
     
     // Generate x values
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < webResponse.count; i++) {
-        [xVals addObject:[@(i) stringValue]];
+//        [xVals addObject:[@(i) stringValue]];
+        [xVals addObject:timeStamps[i]];
     }
     
     // Generate y values

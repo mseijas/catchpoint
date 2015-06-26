@@ -7,6 +7,8 @@
 //
 
 #import "CPAPIParser.h"
+#import "TimeUtils.h"
+
 
 @implementation CPAPIParser
 
@@ -38,7 +40,7 @@
     return nil;
 }
 
-+ (NSArray *)getTimeStampFromSyntheticData:(NSArray *)data {
++ (NSArray *)getUTCTimeStampFromSyntheticData:(NSArray *)data {
     if (data) {
         NSMutableArray *timeData = [[NSMutableArray alloc] init];
         for (int i=0; i < data.count; i++) {
@@ -52,6 +54,45 @@
         return timeData;
     }
     return nil;
+}
+
++ (NSArray *)getUTCTimeObjectsFromSyntheticData:(NSArray *)data {
+    
+    NSMutableArray *timeObjects = [[NSMutableArray alloc] init];
+    NSArray *timeStamps = [self getUTCTimeStampFromSyntheticData:data];
+    
+    for (NSString *timeString in timeStamps) {
+        NSDate *utcDate = [TimeUtils utcStringToDate:timeString];
+        
+        [timeObjects addObject:utcDate];
+    }
+
+    return timeObjects;
+}
+
++ (NSArray *)getLocalTimeStampFromSyntheticData:(NSArray *)data withOptions:(TimeStampFormatOptions)formatOption {
+    
+    NSMutableArray *localTimeStamps = [[NSMutableArray alloc] init];
+    NSArray *timeObjects = [self getUTCTimeObjectsFromSyntheticData:data];
+    
+    for (NSDate *timeObject in timeObjects) {
+        
+        NSString *timeStamp;
+        
+        if (!formatOption || formatOption == TimeStampFormatFullDate) {
+            timeStamp = [TimeUtils formatFullDate:timeObject];
+        }
+        if (formatOption == TimeStampFormatDate) {
+            timeStamp = [TimeUtils formatDate:timeObject];
+        }
+        if (formatOption == TimeStampFormatTime) {
+            timeStamp = [TimeUtils formatTime:timeObject];
+        }
+        
+        [localTimeStamps addObject:timeStamp];
+    }
+    
+    return localTimeStamps;
 }
 
 + (NSString *)metricNameForType:(SyntheticMetricType)metricType {

@@ -9,12 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "CPSyntheticMetrics.h"
 
+typedef NS_ENUM(NSInteger, TimeStampFormatOptions) {
+    TimeStampFormatFullDate = 0,
+    TimeStampFormatDate = 1,
+    TimeStampFormatTime = 2
+};
+
 @interface CPAPIParser : NSObject
 
 + (NSString *)getTestNameFromSyntheticData:(NSArray *)data;
 
 + (NSArray *)getMetric:(SyntheticMetricType)metricType fromSyntheticData:(NSArray *)data;
-+ (NSArray *)getTimeStampFromSyntheticData:(NSArray *)data;
++ (NSArray *)getUTCTimeStampFromSyntheticData:(NSArray *)data;
++ (NSArray *)getUTCTimeObjectsFromSyntheticData:(NSArray *)data;
++ (NSArray *)getLocalTimeStampFromSyntheticData:(NSArray *)data withOptions:(TimeStampFormatOptions)formatOption;
 
 + (NSString *)metricNameForType:(SyntheticMetricType)metricType;
 
