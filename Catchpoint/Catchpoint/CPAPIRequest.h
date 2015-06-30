@@ -16,7 +16,7 @@
 + (NSDictionary *)getFavoriteChartDetails:(NSString *)favoriteId;
 + (NSDictionary *)getFavoriteChartData:(NSString *)favoriteId;
 
-+ (NSDictionary *)getAllProducts;
++ (NSArray *)getAllProducts;
 + (NSDictionary *)getProductsForPage:(int)page;
 
 + (NSDictionary *)getTestWithID:(int)testID;

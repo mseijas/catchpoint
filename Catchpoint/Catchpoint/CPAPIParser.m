@@ -103,4 +103,19 @@
     return [CPSyntheticMetrics metricColorForType:metricType];
 }
 
++ (NSDictionary *)getAllProductsForData:(NSArray *)data {
+    
+    NSMutableDictionary *products = [[NSMutableDictionary alloc] init];
+    
+    for (int i=0; i < data.count ; i++) {
+        
+        NSString *productId = [NSString stringWithFormat:@"%@", data[i][@"id"]];
+        NSString *productName = [NSString stringWithFormat:@"%@", data[i][@"name"]];
+        
+        [products setObject:productName forKey:productId];
+    }
+    
+    return products;
+}
+
 @end

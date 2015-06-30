@@ -27,4 +27,6 @@ typedef NS_ENUM(NSInteger, TimeStampFormatOptions) {
 + (NSString *)metricNameForType:(SyntheticMetricType)metricType;
 + (UIColor *)metricColorForType:(SyntheticMetricType)metricType;
 
++ (NSDictionary *)getAllProductsForData:(NSArray *)data;
+
 @end
