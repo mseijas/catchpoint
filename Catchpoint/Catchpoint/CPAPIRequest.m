@@ -161,11 +161,11 @@
     
     NSString *requestURI;
     
-    if (!options) {
-        requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i", page];
+    if (options) {
+        requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i&%@", page, options];
     }
     
-    requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i&%@", page, options];
+    requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i", page];
 
     
     NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
