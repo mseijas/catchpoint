@@ -32,7 +32,7 @@
         
         for (NSNumber *metricNum in metricData) {
             double metricValue = (double)[metricNum doubleValue];
-            NSLog(@"metric value = %f", metricValue);
+//            NSLog(@"metric value = %f", metricValue);
             
             [yValues addObject:[[ChartDataEntry alloc] initWithValue:metricValue xIndex:[metricData indexOfObject:metricNum]]];
         }
@@ -49,7 +49,6 @@
     
     LineChartData *chartData = [[LineChartData alloc] initWithXVals:xValues dataSets:dataSets];
     [chartData setDrawValues:NO];
-    NSLog(@"chart data: %@", chartData);
     
     // Associate chartData view chart
     chartView.data = chartData;

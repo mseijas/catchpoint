@@ -8,6 +8,7 @@
 
 #import "CPAPIManager.h"
 #import "CPAPIRequest.h"
+#import "DataUtils.h"
 
 
 @implementation CPAPIRequest
@@ -17,6 +18,8 @@
     NSString *requestURI = [NSString stringWithFormat:@"/performance/raw?tests=%@", testId];
     
     NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
+    
+//    NSLog(@"%@", [DataUtils dataToJSON:rawData]);
     
     if (rawData) {
         if (raw == NO) {
@@ -75,6 +78,74 @@
     NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
     return rawData;
+}
+
++ (NSArray *)getAllProducts {
+    
+    int page = 0;
+    
+    NSMutableArray *products = [[NSMutableArray alloc] init];
+    
+    NSDictionary *rawData = [self getProductsForPage:page];
+    [products addObjectsFromArray:rawData[@"items"]];
+    
+    page++;
+    
+    
+    do {
+        // NSLog(@"Getting more data...");
+        
+        rawData = [self getProductsForPage:page];
+        [products addObjectsFromArray:rawData[@"items"]];
+        page++;
+        
+    } while ([rawData[@"has_more"]  isEqual: @YES]);
+    
+    return products;
+}
+
++ (NSDictionary *)getProductsForPage:(int)page {
+    
+    NSString *requestURI = [NSString stringWithFormat:@"/products?pageNumber=%i", page];
+    
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
+    
+    return rawData;
+    
+}
+
++ (NSArray *)getAllTests {
+    
+    int page = 0;
+    
+    NSMutableArray *products = [[NSMutableArray alloc] init];
+    
+    NSDictionary *rawData = [self getTestsForPage:page];
+    [products addObjectsFromArray:rawData[@"items"]];
+    
+    page++;
+    
+    
+    do {
+        // NSLog(@"Getting more data...");
+        
+        rawData = [self getTestsForPage:page];
+        [products addObjectsFromArray:rawData[@"items"]];
+        page++;
+        
+    } while ([rawData[@"has_more"]  isEqual: @YES]);
+    
+    return products;
+}
+
++ (NSDictionary *)getTestsForPage:(int)page {
+    
+    NSString *requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i", page];
+    
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
+    
+    return rawData;
+    
 }
 
 @end
