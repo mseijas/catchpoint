@@ -114,13 +114,32 @@
     
 }
 
++ (NSDictionary *)getTestWithID:(int)testID {
+    
+    NSString *requestURI = [NSString stringWithFormat:@"/tests/%i", testID];
+    
+    NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
+    
+    return rawData;
+    
+}
+
 + (NSArray *)getAllTests {
+    return [self getAllTestsWithOptions:nil];
+}
+
++ (NSArray *)getAllTestsWithName:(NSString *)testName {
+    NSString *options = [NSString stringWithFormat:@"name=%@", testName];
+    return [self getAllTestsWithOptions:options];
+}
+
++ (NSArray *)getAllTestsWithOptions:(NSString *)options {
     
     int page = 0;
     
     NSMutableArray *products = [[NSMutableArray alloc] init];
     
-    NSDictionary *rawData = [self getTestsForPage:page];
+    NSDictionary *rawData = [self getTestsForPage:page withOptions:options];
     [products addObjectsFromArray:rawData[@"items"]];
     
     page++;
@@ -129,7 +148,7 @@
     do {
         // NSLog(@"Getting more data...");
         
-        rawData = [self getTestsForPage:page];
+        rawData = [self getTestsForPage:page withOptions:options];
         [products addObjectsFromArray:rawData[@"items"]];
         page++;
         
@@ -138,9 +157,16 @@
     return products;
 }
 
-+ (NSDictionary *)getTestsForPage:(int)page {
++ (NSDictionary *)getTestsForPage:(int)page withOptions:(NSString *)options {
     
-    NSString *requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i", page];
+    NSString *requestURI;
+    
+    if (!options) {
+        requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i", page];
+    }
+    
+    requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i&%@", page, options];
+
     
     NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     

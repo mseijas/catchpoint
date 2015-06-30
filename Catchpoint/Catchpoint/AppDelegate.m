@@ -26,7 +26,10 @@
 //    NSDictionary *rawData = [CPAPIManager apiGET:@"/tests?name=Cloudfront"];
 //    NSDictionary *rawData = [CPAPIManager apiGET:@"/products"];
     
-    NSDictionary *rawData = [CPAPIRequest getAllTests];
+//    NSDictionary *rawData = [CPAPIRequest getAllTests];
+    
+//    NSDictionary *rawData = [CPAPIRequest getAllTestsWithName:@"Amazon"];
+    NSDictionary *rawData = [CPAPIRequest getTestWithID:31408];
     
     NSLog(@"%@", [DataUtils dataToJSON:rawData]);
     

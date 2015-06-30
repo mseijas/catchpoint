@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface CPAPIRequest : NSObject
- 
+
 + (id)getPerformanceForTest:(NSString *)testId raw:(BOOL)raw;
 
 + (NSDictionary *)getFavoriteChartList;
@@ -19,8 +19,10 @@
 + (NSDictionary *)getAllProducts;
 + (NSDictionary *)getProductsForPage:(int)page;
 
++ (NSDictionary *)getTestWithID:(int)testID;
 + (NSArray *)getAllTests;
-+ (NSDictionary *)getTestsForPage:(int)page;
++ (NSArray *)getAllTestsWithName:(NSString *)testName;
++ (NSDictionary *)getTestsForPage:(int)page withOptions:(NSString *)options;
 
 + (NSDictionary *)getNodeList;
 + (NSDictionary *)getNodeDetails:(NSString *)nodeId;
