@@ -8,6 +8,7 @@
 
 #import "CPAPIParser.h"
 #import "CPAPIRequest.h"
+#import "DataUtils.h"
 
 #import "SyntheticTestsViewController.h"
 #import "CPSyntheticTestCell.h"
@@ -29,10 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.allTests = [CPAPIRequest getAllTests];
+    self.allTests = [CPAPIParser getAllActiveTests];
+//    self.allTests = [CPAPIRequest getAllTests];
     
-    NSArray *productData = [CPAPIRequest getAllProducts];
-    self.allProducts = [CPAPIParser getAllProductsForData:productData];
+//    NSArray *productData = [CPAPIRequest getAllProducts];
+//    self.allProducts = [CPAPIParser getAllProductsForData:productData];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticTestCell"
                                                bundle:[NSBundle mainBundle]]
@@ -52,16 +54,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"Processing cell...");
+//    NSLog(@"Processing cell...");
     
     static NSString *CellIdentifier = @"CPSyntheticTestCell";
     
     CPSyntheticTestCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSString *testName = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"name"]];
-    NSString *productID = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"product_id"]];
+//    NSString *productID = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"product_id"]];
+    NSString *productName = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"product_name"]];
     
-    NSString *productName = [self.allProducts objectForKey:productID];
+//    NSString *productName = [self.allProducts objectForKey:productID];
     
     cell.testName.text = testName;
     cell.productName.text = productName;

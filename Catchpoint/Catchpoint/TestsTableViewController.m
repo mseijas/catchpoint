@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
+#import "DataUtils.h"
+
 #import "TestsTableViewController.h"
 
 @interface TestsTableViewController()
@@ -21,6 +23,8 @@
     [super viewDidLoad];
     
     self.tests = [CPAPIRequest getAllTests];
+    
+    
     
     NSArray *productData = [CPAPIRequest getAllProducts];
     self.products = [CPAPIParser getAllProductsForData:productData];

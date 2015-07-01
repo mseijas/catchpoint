@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
+#import "CPAPIRequest.h"
 #import "CPAPIParser.h"
 #import "TimeUtils.h"
 
@@ -116,6 +117,30 @@
     }
     
     return products;
+}
+
++ (NSArray *)getAllActiveTests {
+    
+    NSMutableArray *activeTests = [[NSMutableArray alloc] init];
+    
+    NSArray *allTests = [CPAPIRequest getAllTests];
+    NSDictionary *allProducts = [self getAllProductsForData:[CPAPIRequest getAllProducts]];
+    
+    for (int i=0; i < allTests.count ; i++) {
+        
+        NSDictionary *currentTest = [allTests[i] mutableCopy];
+
+        NSString *productID = [NSString stringWithFormat:@"%@", currentTest[@"product_id"]];
+        NSString *productName = [allProducts objectForKey:productID];
+
+        
+        if (productName) {
+            [currentTest setValue:productName forKey:@"product_name"];
+            [activeTests addObject:currentTest];
+        }
+    }
+    
+    return activeTests;
 }
 
 @end

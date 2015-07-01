@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CPSyntheticTestCell">
+        <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CPSyntheticTestCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -78,7 +78,7 @@
                         </variation>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="KD3-H5-cvI" secondAttribute="trailing" constant="6" id="4ks-SV-fen"/>
                     <constraint firstItem="KD3-H5-cvI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="AXr-9c-RNA"/>
@@ -86,6 +86,7 @@
                     <constraint firstItem="KD3-H5-cvI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-2" id="zRI-0a-mow"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="checkbox" destination="Cjh-ro-CP3" id="qe6-JP-kUU"/>
                 <outlet property="productName" destination="If7-KM-AbS" id="wJO-M6-fSg"/>
