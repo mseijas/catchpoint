@@ -90,6 +90,7 @@
             <connections>
                 <outlet property="checkbox" destination="Cjh-ro-CP3" id="qe6-JP-kUU"/>
                 <outlet property="productName" destination="If7-KM-AbS" id="wJO-M6-fSg"/>
+                <outlet property="testContentView" destination="KD3-H5-cvI" id="Xys-ap-C9Y"/>
                 <outlet property="testName" destination="Mez-Lr-LHi" id="psl-QO-p31"/>
                 <outlet property="testType" destination="x71-a0-wpA" id="i4G-aC-5tU"/>
             </connections>

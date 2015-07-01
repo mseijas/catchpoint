@@ -11,11 +11,11 @@
 @interface CPSyntheticTestCell : UITableViewCell
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *checkbox;
+@property (strong, nonatomic) IBOutlet UIImageView *checkbox;
 
-@property (weak, nonatomic) IBOutlet UILabel *productName;
-@property (weak, nonatomic) IBOutlet UILabel *testName;
-@property (weak, nonatomic) IBOutlet UILabel *testType;
+@property (strong, nonatomic) IBOutlet UILabel *productName;
+@property (strong, nonatomic) IBOutlet UILabel *testName;
+@property (strong, nonatomic) IBOutlet UILabel *testType;
 
 
 @end
