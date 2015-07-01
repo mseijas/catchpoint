@@ -15,6 +15,9 @@
 		60893D471B3C8FDF0061A5ED /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60893D461B3C8FD60061A5ED /* Charts.framework */; };
 		60893D481B3C8FDF0061A5ED /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60893D461B3C8FD60061A5ED /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60893D4F1B3DDB890061A5ED /* CPSyntheticChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 60893D4E1B3DDB890061A5ED /* CPSyntheticChart.m */; };
+		60B708231B448109004A0D4B /* CPSyntheticTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B708211B448109004A0D4B /* CPSyntheticTestCell.m */; };
+		60B708241B448109004A0D4B /* CPSyntheticTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B708221B448109004A0D4B /* CPSyntheticTestCell.xib */; };
+		60B708271B4488A7004A0D4B /* SyntheticTestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B708261B4488A7004A0D4B /* SyntheticTestsViewController.m */; };
 		60D1A51B1B3B669200E9CDAC /* ChartsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1A51A1B3B669200E9CDAC /* ChartsViewController.m */; };
 		60D1A51E1B3B688300E9CDAC /* Catchpoint-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D1A51D1B3B688300E9CDAC /* Catchpoint-Swift.swift */; };
 		60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA286C1B349356002B281B /* CPAPIRequest.m */; };
@@ -83,6 +86,11 @@
 		60893D411B3C8FD60061A5ED /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Charts.xcodeproj; sourceTree = "<group>"; };
 		60893D4D1B3DDB890061A5ED /* CPSyntheticChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticChart.h; sourceTree = "<group>"; };
 		60893D4E1B3DDB890061A5ED /* CPSyntheticChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticChart.m; sourceTree = "<group>"; };
+		60B708201B448109004A0D4B /* CPSyntheticTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticTestCell.h; sourceTree = "<group>"; };
+		60B708211B448109004A0D4B /* CPSyntheticTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticTestCell.m; sourceTree = "<group>"; };
+		60B708221B448109004A0D4B /* CPSyntheticTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPSyntheticTestCell.xib; sourceTree = "<group>"; };
+		60B708251B4488A7004A0D4B /* SyntheticTestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyntheticTestsViewController.h; sourceTree = "<group>"; };
+		60B708261B4488A7004A0D4B /* SyntheticTestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyntheticTestsViewController.m; sourceTree = "<group>"; };
 		60D1A5171B3B65AB00E9CDAC /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/Catchpoint-bctuuwqvucbwmdaidqqebebfbhgi/Build/Products/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 		60D1A5191B3B669200E9CDAC /* ChartsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartsViewController.h; sourceTree = "<group>"; };
 		60D1A51A1B3B669200E9CDAC /* ChartsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartsViewController.m; sourceTree = "<group>"; };
@@ -209,6 +217,11 @@
 				600C65A41B33268300CBFED3 /* Utils */,
 				60F32C9D1B31FF7300BDCA16 /* AppDelegate.h */,
 				60F32C9E1B31FF7300BDCA16 /* AppDelegate.m */,
+				60B708201B448109004A0D4B /* CPSyntheticTestCell.h */,
+				60B708211B448109004A0D4B /* CPSyntheticTestCell.m */,
+				60B708221B448109004A0D4B /* CPSyntheticTestCell.xib */,
+				60B708251B4488A7004A0D4B /* SyntheticTestsViewController.h */,
+				60B708261B4488A7004A0D4B /* SyntheticTestsViewController.m */,
 				60F32CA01B31FF7300BDCA16 /* ViewController.h */,
 				60F32CA11B31FF7300BDCA16 /* ViewController.m */,
 				60F32CA31B31FF7300BDCA16 /* Main.storyboard */,
@@ -385,6 +398,7 @@
 			files = (
 				60F32CA51B31FF7300BDCA16 /* Main.storyboard in Resources */,
 				60F32CAA1B31FF7300BDCA16 /* LaunchScreen.xib in Resources */,
+				60B708241B448109004A0D4B /* CPSyntheticTestCell.xib in Resources */,
 				60F32CA71B31FF7300BDCA16 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B708231B448109004A0D4B /* CPSyntheticTestCell.m in Sources */,
 				60F32CC11B32002E00BDCA16 /* CPAPIToken.m in Sources */,
 				60D1A51B1B3B669200E9CDAC /* ChartsViewController.m in Sources */,
 				600C65A31B33268000CBFED3 /* DataUtils.m in Sources */,
@@ -445,6 +460,7 @@
 				60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */,
 				60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */,
 				60FE435E1B33516600109D14 /* TimeUtils.m in Sources */,
+				60B708271B4488A7004A0D4B /* SyntheticTestsViewController.m in Sources */,
 				60893D4F1B3DDB890061A5ED /* CPSyntheticChart.m in Sources */,
 				60DA28731B34BFFB002B281B /* CPSyntheticMetrics.m in Sources */,
 				60D1A51E1B3B688300E9CDAC /* Catchpoint-Swift.swift in Sources */,
