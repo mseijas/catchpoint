@@ -31,10 +31,6 @@
     [super viewDidLoad];
     
     self.allTests = [CPAPIParser getAllActiveTests];
-//    self.allTests = [CPAPIRequest getAllTests];
-    
-//    NSArray *productData = [CPAPIRequest getAllProducts];
-//    self.allProducts = [CPAPIParser getAllProductsForData:productData];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticTestCell"
                                                bundle:[NSBundle mainBundle]]
@@ -61,13 +57,12 @@
     CPSyntheticTestCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSString *testName = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"name"]];
-//    NSString *productID = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"product_id"]];
+    NSString *testType = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"type"][@"name"]];
     NSString *productName = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"product_name"]];
-    
-//    NSString *productName = [self.allProducts objectForKey:productID];
     
     cell.testName.text = testName;
     cell.productName.text = productName;
+    cell.testType.text = testType;
     
     return cell;
 }
