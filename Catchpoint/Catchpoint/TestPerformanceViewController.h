@@ -2,15 +2,12 @@
 //  TestPerformanceViewController.h
 //  Catchpoint
 //
-//  Created by Matias on 6/18/15.
+//  Created by Matias on 7/2/15.
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface TestPerformanceViewController : UIViewController
-
-@property (weak, nonatomic) IBOutlet UITextField *testIdField;
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+@interface TestPerformanceViewController : UITableViewController
 
 @end

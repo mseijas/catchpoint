@@ -2,26 +2,13 @@
 //  TestPerformanceViewController.m
 //  Catchpoint
 //
-//  Created by Matias on 6/18/15.
+//  Created by Matias on 7/2/15.
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
-#import <FSLineChart.h> 
-#import "TimeUtils.h"
-#import "DataUtils.h"
-#import "CPAPIRequest.h"
-#import "CPAPIParser.h"
-
 #import "TestPerformanceViewController.h"
 
-
 @interface TestPerformanceViewController ()
-
-
-@property (weak, nonatomic) IBOutlet UIView *chartView;
-@property (strong, nonatomic) FSLineChart *chart;
-@property (weak, nonatomic) NSArray *data;
-@property (weak, nonatomic) NSString *testName;
 
 @end
 
@@ -30,60 +17,85 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // test2: 33621, 33611
-
-    self.data = [CPAPIRequest getPerformanceForTest:@"33621" raw:NO];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-    [self.view addGestureRecognizer:
-     [[UITapGestureRecognizer alloc] initWithTarget:self
-                                             action:@selector(hideKeyboard:)]];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    FSLineChart *chart = [[FSLineChart alloc] initWithFrame:CGRectMake(20, 260, [UIScreen mainScreen].bounds.size.width - 40, 166)];
-    
-    self.chart = chart;
-    [self.chartView addSubview:self.chart];
-    
-    [self updateChart];
 }
 
-- (IBAction)hideKeyboard:(id)sender {
-    [self.view endEditing:YES];
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)drawChart:(id)sender {
-    NSLog(@"Drawing chart");
-    
-    [self.view endEditing:YES];
-    
-    NSString *testId = self.testIdField.text;
-    self.data = [CPAPIRequest getPerformanceForTest:testId raw:NO];
-    [self.chart clearChartData];
-    [self updateChart];
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
 }
 
-
-- (void)updateChart {
-    NSLog(@"UPDATING CHART");
-    
-    self.chart.verticalGridStep = 4;
-    self.chart.horizontalGridStep = 4;
-    
-    NSArray *timeStamps = [CPAPIParser getUTCTimeObjectsFromSyntheticData:self.data];
-    self.testLabel.text = [CPAPIParser getTestNameFromSyntheticData:self.data];
-    NSArray *chartData = [CPAPIParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:self.data average:nil];
-    
-    
-    self.chart.labelForIndex = ^(NSUInteger item) {
-        return [TimeUtils formatTime:[TimeUtils utcStringToDate:timeStamps[item]]];
-    };
-    
-    self.chart.labelForValue = ^(CGFloat value) {
-        return [NSString stringWithFormat:@"%.f", value];
-    };
-    
-    [self.chart setChartData:chartData];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
 }
 
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
 
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

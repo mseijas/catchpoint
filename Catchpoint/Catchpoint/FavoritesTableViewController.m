@@ -111,7 +111,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"Processing cell...");
+    //NSLog(@"Processing cell...");
     
     static NSString *CellIdentifier = @"CPSyntheticFavoriteTableViewCell";
     
@@ -124,7 +124,7 @@
     NSString *testType = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"type"][@"name"]];
     NSString *productName = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"product_name"]];
     
-    NSLog(@"Test Name: %@", testName);
+    //NSLog(@"Test Name: %@", testName);
     
     cell.testName.text = testName;
     cell.productName.text = productName;
@@ -140,6 +140,10 @@
     cell.availabilityMetric.text = [NSString stringWithFormat:@"%.2f", [availabilityAvg doubleValue]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPathå {
+    [self performSegueWithIdentifier:@"showTestPerformance" sender:self];
 }
 
 @end
