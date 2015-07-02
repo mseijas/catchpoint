@@ -167,7 +167,7 @@
 
 //    CPSyntheticFavoriteTableViewCell *cell = (CPSyntheticFavoriteTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
 //    self.selectedTestID = cell.testID;
-    
+    [self.selectedTestData removeAllObjects];
     [self.selectedTestData addObject:self.selectedTests[indexPath.row]];
     
     [self performSegueWithIdentifier:@"showTestPerformance" sender:self];

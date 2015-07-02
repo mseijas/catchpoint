@@ -12,6 +12,7 @@
 		601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601AC6301B3260E300641F09 /* MainTableViewController.m */; };
 		604F0D6F1B433EC5009A3D07 /* TestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604F0D6E1B433EC5009A3D07 /* TestsTableViewController.m */; };
 		6083089B1B45D970005B49DA /* CPSyntheticSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6083089A1B45D970005B49DA /* CPSyntheticSummaryCell.m */; };
+		6083089E1B45E3C4005B49DA /* CPSyntheticChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6083089D1B45E3C4005B49DA /* CPSyntheticChartCell.m */; };
 		60893D471B3C8FDF0061A5ED /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60893D461B3C8FD60061A5ED /* Charts.framework */; };
 		60893D481B3C8FDF0061A5ED /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60893D461B3C8FD60061A5ED /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60893D4F1B3DDB890061A5ED /* CPSyntheticChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 60893D4E1B3DDB890061A5ED /* CPSyntheticChart.m */; };
@@ -86,6 +87,8 @@
 		604F0D6E1B433EC5009A3D07 /* TestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestsTableViewController.m; sourceTree = "<group>"; };
 		608308991B45D970005B49DA /* CPSyntheticSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSyntheticSummaryCell.h; path = ../CPSyntheticSummaryCell.h; sourceTree = "<group>"; };
 		6083089A1B45D970005B49DA /* CPSyntheticSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSyntheticSummaryCell.m; path = ../CPSyntheticSummaryCell.m; sourceTree = "<group>"; };
+		6083089C1B45E3C4005B49DA /* CPSyntheticChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticChartCell.h; sourceTree = "<group>"; };
+		6083089D1B45E3C4005B49DA /* CPSyntheticChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticChartCell.m; sourceTree = "<group>"; };
 		60893D411B3C8FD60061A5ED /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Charts.xcodeproj; sourceTree = "<group>"; };
 		60893D4D1B3DDB890061A5ED /* CPSyntheticChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticChart.h; sourceTree = "<group>"; };
 		60893D4E1B3DDB890061A5ED /* CPSyntheticChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticChart.m; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 				60B708201B448109004A0D4B /* CPSyntheticTestCell.h */,
 				60B708211B448109004A0D4B /* CPSyntheticTestCell.m */,
 				60B708221B448109004A0D4B /* CPSyntheticTestCell.xib */,
+				6083089C1B45E3C4005B49DA /* CPSyntheticChartCell.h */,
+				6083089D1B45E3C4005B49DA /* CPSyntheticChartCell.m */,
 				60B708251B4488A7004A0D4B /* SyntheticTestsViewController.h */,
 				60B708261B4488A7004A0D4B /* SyntheticTestsViewController.m */,
 				60B7082B1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.h */,
@@ -481,6 +486,7 @@
 				60893D4F1B3DDB890061A5ED /* CPSyntheticChart.m in Sources */,
 				60DA28731B34BFFB002B281B /* CPSyntheticMetrics.m in Sources */,
 				60D1A51E1B3B688300E9CDAC /* Catchpoint-Swift.swift in Sources */,
+				6083089E1B45E3C4005B49DA /* CPSyntheticChartCell.m in Sources */,
 				60F32C9C1B31FF7300BDCA16 /* main.m in Sources */,
 				60DA28701B34A7F7002B281B /* CPAPIParser.m in Sources */,
 				604F0D6F1B433EC5009A3D07 /* TestsTableViewController.m in Sources */,
