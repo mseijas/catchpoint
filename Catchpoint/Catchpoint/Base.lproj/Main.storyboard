@@ -190,6 +190,7 @@
                                     <barButtonItem title="APPLY" id="hqc-k6-qeT">
                                         <connections>
                                             <action selector="applySelectedTests:" destination="Fh7-sP-s3p" id="n6S-qi-vLp"/>
+                                            <segue destination="GNb-Pe-nUv" kind="unwind" identifier="unwindToFavoritesWithTests" unwindAction="unwindToFavorites:" id="7pH-Tv-GSD"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -237,7 +238,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="20z-Im-SSg">
                             <color key="tintColor" red="0.63137254899999995" green="0.81960784310000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="GNb-Pe-nUv" kind="unwind" unwindAction="unwindToFavorites:" id="9aj-kj-gYK"/>
+                                <segue destination="GNb-Pe-nUv" kind="unwind" identifier="unwindToFavorites" unwindAction="unwindToFavorites:" id="1K1-zf-TDL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -304,11 +305,11 @@
         <scene sceneID="RdF-TK-B7M">
             <objects>
                 <tableViewController id="Kzl-QW-pxW" customClass="FavoritesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="07R-9g-xX5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="126" sectionHeaderHeight="22" sectionFooterHeight="22" id="07R-9g-xX5">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rxq-Ji-Fmh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CPSyntheticFavoriteTableViewCell" id="Rxq-Ji-Fmh" customClass="CPSyntheticFavoriteTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rxq-Ji-Fmh" id="ZRR-lC-Rqr">
                                     <autoresizingMask key="autoresizingMask"/>

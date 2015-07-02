@@ -10,4 +10,6 @@
 
 @interface FavoritesTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *selectedTests;
+
 @end

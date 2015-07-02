@@ -12,6 +12,7 @@
 
 #import "SyntheticTestsViewController.h"
 #import "CPSyntheticTestCell.h"
+#import "FavoritesTableViewController.h"
 
 @interface SyntheticTestsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -42,6 +43,20 @@
 }
 
 - (IBAction)applySelectedTests:(id)sender {
+    //NSLog(@"-applySelectedTests");
+    [self performSegueWithIdentifier:@"unwindToFavoritesWithTests" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"unwindToFavoritesWithTests"]) {
+        //NSLog(@"Segue identifier : unwindToFavoritesWithTests");
+    if ([segue.destinationViewController isKindOfClass:[FavoritesTableViewController class]]) {
+        //NSLog(@"Destination controler isOfClass FavoritesTableViewController");
+        FavoritesTableViewController *favoritesTableViewController = segue.destinationViewController;
+        favoritesTableViewController.selectedTests = self.selectedTests;
+        //NSLog(@"Set selection as: %@", self.selectedTests);
+    }
+    }
 }
 
 - (void)updateSelectionCount {
@@ -65,8 +80,6 @@
     CPSyntheticTestCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.test = self.allTests[indexPath.row];
-    
-    NSLog(@"TEST: %@", cell.test);
     
     NSString *testName = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"name"]];
     NSString *testType = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"type"][@"name"]];

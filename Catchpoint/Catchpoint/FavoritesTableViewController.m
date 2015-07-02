@@ -6,7 +6,10 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
+#import "CPAPIParser.h"
+
 #import "FavoritesTableViewController.h"
+#import "CPSyntheticTestCell.h"
 
 @interface FavoritesTableViewController ()
 
@@ -17,28 +20,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.selectedTests = [[NSArray alloc] init];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticFavoriteTableViewCell"
+                                               bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:@"CPSyntheticFavoriteTableViewCell"];
+    
+    [self.tableView reloadData];
 }
 
 - (IBAction)unwindToFavorites:(UIStoryboardSegue *)segue {
+    //NSLog(@"unwindToFavorites");
+    //NSLog(@"Selected tests: %@", self.selectedTests);
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.selectedTests.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"Processing cell...");
+    
+    static NSString *CellIdentifier = @"CPSyntheticFavoriteTableViewCell";
+    
+    CPSyntheticTestCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.test = self.selectedTests[indexPath.row];
+    
+    NSString *testName = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"name"]];
+    NSString *testType = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"type"][@"name"]];
+    NSString *productName = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"product_name"]];
+    
+    NSLog(@"Test Name: %@", testName);
+    
+    cell.testName.text = testName;
+    cell.productName.text = productName;
+    cell.testType.text = testType;
+    cell.testType.backgroundColor = [CPAPIParser colorForTestTypeID:self.selectedTests[indexPath.row][@"type"][@"id"]];
+    
+    return cell;
 }
 
 /*

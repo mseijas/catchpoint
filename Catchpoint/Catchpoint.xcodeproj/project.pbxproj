@@ -19,6 +19,8 @@
 		60B708241B448109004A0D4B /* CPSyntheticTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B708221B448109004A0D4B /* CPSyntheticTestCell.xib */; };
 		60B708271B4488A7004A0D4B /* SyntheticTestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B708261B4488A7004A0D4B /* SyntheticTestsViewController.m */; };
 		60B7082A1B459ABA004A0D4B /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B708291B459ABA004A0D4B /* FavoritesTableViewController.m */; };
+		60B7082E1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B7082C1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.m */; };
+		60B7082F1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B7082D1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.xib */; };
 		60D1A51B1B3B669200E9CDAC /* ChartsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1A51A1B3B669200E9CDAC /* ChartsViewController.m */; };
 		60D1A51E1B3B688300E9CDAC /* Catchpoint-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D1A51D1B3B688300E9CDAC /* Catchpoint-Swift.swift */; };
 		60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA286C1B349356002B281B /* CPAPIRequest.m */; };
@@ -94,6 +96,9 @@
 		60B708261B4488A7004A0D4B /* SyntheticTestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyntheticTestsViewController.m; sourceTree = "<group>"; };
 		60B708281B459ABA004A0D4B /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		60B708291B459ABA004A0D4B /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
+		60B7082B1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticFavoriteTableViewCell.h; sourceTree = "<group>"; };
+		60B7082C1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticFavoriteTableViewCell.m; sourceTree = "<group>"; };
+		60B7082D1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPSyntheticFavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		60D1A5171B3B65AB00E9CDAC /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/Catchpoint-bctuuwqvucbwmdaidqqebebfbhgi/Build/Products/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 		60D1A5191B3B669200E9CDAC /* ChartsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartsViewController.h; sourceTree = "<group>"; };
 		60D1A51A1B3B669200E9CDAC /* ChartsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartsViewController.m; sourceTree = "<group>"; };
@@ -228,6 +233,9 @@
 				60F32CA01B31FF7300BDCA16 /* ViewController.h */,
 				60F32CA11B31FF7300BDCA16 /* ViewController.m */,
 				60F32CA31B31FF7300BDCA16 /* Main.storyboard */,
+				60B7082B1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.h */,
+				60B7082C1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.m */,
+				60B7082D1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.xib */,
 				60B708281B459ABA004A0D4B /* FavoritesTableViewController.h */,
 				60B708291B459ABA004A0D4B /* FavoritesTableViewController.m */,
 				60D1A5191B3B669200E9CDAC /* ChartsViewController.h */,
@@ -401,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B7082F1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.xib in Resources */,
 				60F32CA51B31FF7300BDCA16 /* Main.storyboard in Resources */,
 				60F32CAA1B31FF7300BDCA16 /* LaunchScreen.xib in Resources */,
 				60B708241B448109004A0D4B /* CPSyntheticTestCell.xib in Resources */,
@@ -457,6 +466,7 @@
 			files = (
 				60B708231B448109004A0D4B /* CPSyntheticTestCell.m in Sources */,
 				60F32CC11B32002E00BDCA16 /* CPAPIToken.m in Sources */,
+				60B7082E1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.m in Sources */,
 				60D1A51B1B3B669200E9CDAC /* ChartsViewController.m in Sources */,
 				600C65A31B33268000CBFED3 /* DataUtils.m in Sources */,
 				60B7082A1B459ABA004A0D4B /* FavoritesTableViewController.m in Sources */,
