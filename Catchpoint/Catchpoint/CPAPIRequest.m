@@ -19,7 +19,7 @@
     
     NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
-    //NSLog(@"%@", [DataUtils dataToJSON:rawData]);
+    NSLog(@"RAW DATA: %@", [DataUtils dataToJSON:rawData]);
     
     if (rawData) {
         if (raw == NO) {
@@ -125,7 +125,8 @@
 }
 
 + (NSArray *)getAllTests {
-    return [self getAllTestsWithOptions:nil];
+//    return [self getAllTestsWithOptions:nil];
+    return [self getAllTestsWithOptions:@"typeId=0"];
 }
 
 + (NSArray *)getAllTestsWithName:(NSString *)testName {
@@ -161,11 +162,11 @@
     
     NSString *requestURI;
     
+    requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i", page];
+    
     if (options) {
         requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i&%@", page, options];
     }
-    
-    requestURI = [NSString stringWithFormat:@"/tests?pageNumber=%i", page];
 
     
     NSDictionary *rawData = [CPAPIManager apiGET:requestURI];

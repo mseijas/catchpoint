@@ -35,7 +35,9 @@
 }
 
 + (id)getMetric:(SyntheticMetricType)metricType fromSyntheticData:(NSArray *)data average:(BOOL)average {
+    //NSLog(@"Getting metric from synthetic!!");
     if (data) {
+        // NSLog(@"GET METRIC DATA: %@", data);
 //        int metricId = [metricType intValue];
         NSMutableArray *metricData = [[NSMutableArray alloc] init];
         
@@ -53,14 +55,20 @@
             
             double sum = 0;
             double avg = 0;
+            NSNumber *metricAverage = [NSNumber numberWithDouble:avg];
             
-            for (NSNumber *value in metricData) {
-                sum += [value doubleValue];
+            if (metricData.count > 0) {
+                int i = 0;
+                
+                for (NSNumber *value in metricData) {
+                    sum += [value doubleValue];
+                    i++;
+                }
+                
+                avg = sum / metricData.count;
+                metricAverage = [NSNumber numberWithDouble:avg];
             }
             
-            avg = sum / metricData.count;
-            
-            NSNumber *metricAverage = [NSNumber numberWithDouble:avg];
             return metricAverage;
         }
         
