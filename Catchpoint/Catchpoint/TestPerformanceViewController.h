@@ -10,4 +10,6 @@
 
 @interface TestPerformanceViewController : UITableViewController
 
+@property (nonatomic, weak) NSArray *testData;
+
 @end

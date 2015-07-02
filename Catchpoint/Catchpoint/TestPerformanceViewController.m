@@ -6,7 +6,10 @@
 //  Copyright (c) 2015 Catchpoint Systems. All rights reserved.
 //
 
+#import "CPAPIParser.h"
+
 #import "TestPerformanceViewController.h"
+#import "CPSyntheticSummaryCell.h"
 
 @interface TestPerformanceViewController ()
 
@@ -17,11 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // NSLog(@"TEST DATA: %@", self.testData);
+//    [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticSummaryCell"
+//                                               bundle:[NSBundle mainBundle]]
+//         forCellReuseIdentifier:@"CPSyntheticSummaryCell"];
     
 }
 
@@ -33,69 +35,76 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+    if (section == 0) {
+        return 1;
+    }
+    if (section == 1) {
+        return 0;
+    }
     return 0;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    //NSLog(@"Processing cell...");
+    
+    static NSString *CellIdentifier = @"CPSyntheticSummaryCell";
+    
+    CPSyntheticSummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    //int testID = (int)self.testData[0][@"id"];
+    NSString *testName = [NSString stringWithFormat:@"%@", self.testData[0][@"name"]];
+    NSString *testType = [NSString stringWithFormat:@"%@", self.testData[0][@"type"][@"name"]];
+    NSString *productName = [NSString stringWithFormat:@"%@", self.testData[0][@"product_name"]];
+    
+    cell.testName.text = testName;
+    cell.productName.text = productName;
+    cell.testType.text = testType;
+    cell.testType.backgroundColor = [CPAPIParser colorForTestTypeID:self.testData[0][@"type"][@"id"]];
+    
+    
+    NSNumber *responseAvg = [CPAPIParser getMetric:SyntheticMetricResponse fromSyntheticData:self.testData[1] average:YES];
+    NSNumber *availabilityAvg = [CPAPIParser getMetric:SyntheticMetricPctAvailability fromSyntheticData:self.testData[1] average:YES];
+    
+    cell.responseMetric.text = [NSString stringWithFormat:@"%.2f", [responseAvg doubleValue]];
+    cell.availabilityMetric.text = [NSString stringWithFormat:@"%.2f", [availabilityAvg doubleValue]];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 115;
+    }
+    return 44;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 1) {
+        return @"Last 15 min";
+    }
+    return nil;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 1) {
+        return 35;
+    }
+    return 0;
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+-(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    
+    header.backgroundView.backgroundColor = [UIColor colorWithRed:0.859 green:0.855 blue:0.886 alpha:1];
+    header.textLabel.font = [UIFont systemFontOfSize:14.0f];
+    header.textLabel.textColor = [UIColor colorWithRed:0.490 green:0.478 blue:0.549 alpha:1];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

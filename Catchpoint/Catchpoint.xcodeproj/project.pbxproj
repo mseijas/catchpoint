@@ -11,6 +11,7 @@
 		600C65A31B33268000CBFED3 /* DataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 600C65A21B33268000CBFED3 /* DataUtils.m */; };
 		601AC6311B3260E300641F09 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601AC6301B3260E300641F09 /* MainTableViewController.m */; };
 		604F0D6F1B433EC5009A3D07 /* TestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604F0D6E1B433EC5009A3D07 /* TestsTableViewController.m */; };
+		6083089B1B45D970005B49DA /* CPSyntheticSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6083089A1B45D970005B49DA /* CPSyntheticSummaryCell.m */; };
 		60893D471B3C8FDF0061A5ED /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60893D461B3C8FD60061A5ED /* Charts.framework */; };
 		60893D481B3C8FDF0061A5ED /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60893D461B3C8FD60061A5ED /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60893D4F1B3DDB890061A5ED /* CPSyntheticChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 60893D4E1B3DDB890061A5ED /* CPSyntheticChart.m */; };
@@ -83,6 +84,8 @@
 		601AC6301B3260E300641F09 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		604F0D6D1B433EC5009A3D07 /* TestsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestsTableViewController.h; sourceTree = "<group>"; };
 		604F0D6E1B433EC5009A3D07 /* TestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestsTableViewController.m; sourceTree = "<group>"; };
+		608308991B45D970005B49DA /* CPSyntheticSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSyntheticSummaryCell.h; path = ../CPSyntheticSummaryCell.h; sourceTree = "<group>"; };
+		6083089A1B45D970005B49DA /* CPSyntheticSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSyntheticSummaryCell.m; path = ../CPSyntheticSummaryCell.m; sourceTree = "<group>"; };
 		60893D411B3C8FD60061A5ED /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Charts.xcodeproj; sourceTree = "<group>"; };
 		60893D4D1B3DDB890061A5ED /* CPSyntheticChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticChart.h; sourceTree = "<group>"; };
 		60893D4E1B3DDB890061A5ED /* CPSyntheticChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticChart.m; sourceTree = "<group>"; };
@@ -196,7 +199,6 @@
 			children = (
 				60893D411B3C8FD60061A5ED /* Charts.xcodeproj */,
 				60D1A51D1B3B688300E9CDAC /* Catchpoint-Swift.swift */,
-				60F32CA31B31FF7300BDCA16 /* Main.storyboard */,
 				60F32C981B31FF7300BDCA16 /* Catchpoint */,
 				60F32CB21B31FF7300BDCA16 /* CatchpointTests */,
 				60F32C971B31FF7300BDCA16 /* Products */,
@@ -218,6 +220,7 @@
 		60F32C981B31FF7300BDCA16 /* Catchpoint */ = {
 			isa = PBXGroup;
 			children = (
+				60F32CA31B31FF7300BDCA16 /* Main.storyboard */,
 				60F32CC21B32003200BDCA16 /* API */,
 				60893D501B3DDB8C0061A5ED /* Charts */,
 				600C65A41B33268300CBFED3 /* Utils */,
@@ -231,6 +234,8 @@
 				60B7082B1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.h */,
 				60B7082C1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.m */,
 				60B7082D1B45A28A004A0D4B /* CPSyntheticFavoriteTableViewCell.xib */,
+				608308991B45D970005B49DA /* CPSyntheticSummaryCell.h */,
+				6083089A1B45D970005B49DA /* CPSyntheticSummaryCell.m */,
 				60B708281B459ABA004A0D4B /* FavoritesTableViewController.h */,
 				60B708291B459ABA004A0D4B /* FavoritesTableViewController.m */,
 				60D1A5191B3B669200E9CDAC /* ChartsViewController.h */,
@@ -470,6 +475,7 @@
 				60F32CC51B32059800BDCA16 /* CPAPIManager.m in Sources */,
 				60DA286D1B349356002B281B /* CPAPIRequest.m in Sources */,
 				60F32C9F1B31FF7300BDCA16 /* AppDelegate.m in Sources */,
+				6083089B1B45D970005B49DA /* CPSyntheticSummaryCell.m in Sources */,
 				60FE435E1B33516600109D14 /* TimeUtils.m in Sources */,
 				60B708271B4488A7004A0D4B /* SyntheticTestsViewController.m in Sources */,
 				60893D4F1B3DDB890061A5ED /* CPSyntheticChart.m in Sources */,
@@ -511,7 +517,6 @@
 				60F32CA41B31FF7300BDCA16 /* Base */,
 			);
 			name = Main.storyboard;
-			path = Catchpoint;
 			sourceTree = "<group>";
 		};
 		60F32CA81B31FF7300BDCA16 /* LaunchScreen.xib */ = {

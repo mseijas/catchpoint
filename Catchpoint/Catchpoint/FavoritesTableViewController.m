@@ -13,10 +13,14 @@
 #import "FavoritesTableViewController.h"
 #import "CPSyntheticFavoriteTableViewCell.h"
 #import "CPSyntheticTestCell.h"
+#import "TestPerformanceViewController.h"
 
 @interface FavoritesTableViewController ()
 
 @property (strong, nonatomic) NSMutableDictionary *testData;
+
+//@property (nonatomic) int selectedTestID;
+@property (strong, nonatomic) NSMutableArray *selectedTestData;
 
 @end
 
@@ -27,6 +31,7 @@
     
     self.selectedTests = [[NSArray alloc] init];
     self.testData = [[NSMutableDictionary alloc] init];
+    self.selectedTestData = [[NSMutableArray alloc] init];
     
     [self loadTestData];
     
@@ -54,6 +59,21 @@
     dispatch_async(dispatch_get_main_queue(), ^ {
         [self performSegueWithIdentifier:@"addFavorites" sender:sender];
     });
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showTestPerformance"]) {
+
+        if ([segue.destinationViewController isKindOfClass:[TestPerformanceViewController class]]) {
+            TestPerformanceViewController *testPerformanceViewController = segue.destinationViewController;
+            
+            int testID = (int)self.selectedTestData[0][@"id"];
+            
+            [self.selectedTestData addObject:[self.testData objectForKey:[NSNumber numberWithInt:testID]]];
+//            NSArray *selectedTestData = [self.testData objectForKey:[NSNumber numberWithInt:testID]];
+            testPerformanceViewController.testData = self.selectedTestData;
+        }
+    }
 }
 
 - (void)loadTestData {
@@ -126,6 +146,7 @@
     
     //NSLog(@"Test Name: %@", testName);
     
+    cell.testID = testID;
     cell.testName.text = testName;
     cell.productName.text = productName;
     cell.testType.text = testType;
@@ -142,7 +163,13 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPathå {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+//    CPSyntheticFavoriteTableViewCell *cell = (CPSyntheticFavoriteTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+//    self.selectedTestID = cell.testID;
+    
+    [self.selectedTestData addObject:self.selectedTests[indexPath.row]];
+    
     [self performSegueWithIdentifier:@"showTestPerformance" sender:self];
 }
 

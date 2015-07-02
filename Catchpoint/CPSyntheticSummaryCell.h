@@ -1,5 +1,5 @@
 //
-//  CPSyntheticFavoriteTableViewCell.h
+//  CPSyntheticSummaryCell.h
 //  Catchpoint
 //
 //  Created by Matias on 7/2/15.
@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CPSyntheticFavoriteTableViewCell : UITableViewCell
-
-@property (strong, nonatomic) NSDictionary *test;
-@property (nonatomic) int testID;
+@interface CPSyntheticSummaryCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *productName;
 @property (weak, nonatomic) IBOutlet UILabel *testName;
@@ -22,5 +19,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *availabilityView;
 @property (weak, nonatomic) IBOutlet UILabel *availabilityMetric;
+
 
 @end
