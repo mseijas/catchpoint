@@ -359,7 +359,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CPSyntheticSummaryCell" rowHeight="115" id="E9Q-De-WES" customClass="CPSyntheticSummaryCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CPSyntheticSummaryCell" rowHeight="114" id="E9Q-De-WES" customClass="CPSyntheticSummaryCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E9Q-De-WES" id="gxu-zC-UOa">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -382,8 +382,7 @@
                                                     <exclude reference="Tcx-oF-2SN"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="20" y="77" width="48" height="18"/>
+                                            <variation key="heightClass=regular">
                                                 <mask key="constraints">
                                                     <include reference="71r-Vx-9da"/>
                                                     <exclude reference="8hc-Eu-iX3"/>
@@ -406,8 +405,7 @@
                                                     <exclude reference="XUo-iz-ked"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="20" y="42" width="208" height="21"/>
+                                            <variation key="heightClass=regular">
                                                 <mask key="constraints">
                                                     <include reference="XUo-iz-ked"/>
                                                     <exclude reference="bVk-qh-AZQ"/>
@@ -429,8 +427,7 @@
                                                     <exclude reference="6Sc-z7-OTQ"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="20" y="20" width="208" height="21"/>
+                                            <variation key="heightClass=regular">
                                                 <mask key="constraints">
                                                     <exclude reference="6Sc-z7-OTQ"/>
                                                 </mask>
@@ -525,8 +522,7 @@
                                                     <exclude reference="hHE-03-k0e"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="271" y="57" width="104" height="57"/>
+                                            <variation key="heightClass=regular">
                                                 <mask key="constraints">
                                                     <include reference="SeA-oU-kUn"/>
                                                     <include reference="hHE-03-k0e"/>
@@ -625,9 +621,6 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-d5-nhi" customClass="LineChartView" customModule="Charts">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="8" y="6" width="359" height="243"/>
-                                            </variation>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
