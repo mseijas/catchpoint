@@ -39,8 +39,8 @@
 - (IBAction)unwindToFavorites:(UIStoryboardSegue *)segue {
     //NSLog(@"unwindToFavorites");
     //NSLog(@"Selected tests: %@", self.selectedTests);
-    [self.tableView reloadData];
     [self loadTestData];
+    [self.tableView reloadData];
 }
 
 - (void)loadTestData {
@@ -102,7 +102,7 @@
     
     cell.test = self.selectedTests[indexPath.row];
     
-    NSString *testID = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"id"]];
+    int testID = (int)self.selectedTests[indexPath.row][@"id"];
     NSString *testName = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"name"]];
     NSString *testType = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"type"][@"name"]];
     NSString *productName = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"product_name"]];
@@ -115,7 +115,7 @@
     cell.testType.backgroundColor = [CPAPIParser colorForTestTypeID:self.selectedTests[indexPath.row][@"type"][@"id"]];
     
     
-    NSArray *testData = [CPAPIRequest getPerformanceForTest:testID raw:NO];
+    NSArray *testData = [self.testData objectForKey:[NSNumber numberWithInt:testID]];
     NSNumber *responseAvg = [CPAPIParser getMetric:SyntheticMetricResponse fromSyntheticData:testData average:YES];
     NSNumber *availabilityAvg = [CPAPIParser getMetric:SyntheticMetricPctAvailability fromSyntheticData:testData average:YES];
 
