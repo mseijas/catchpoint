@@ -45,6 +45,11 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                 <color key="textColor" red="0.71372549019999998" green="0.71372549019999998" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ccA-YM-wvd"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9K-Zf-bT7">
                                 <rect key="frame" x="255" y="0.0" width="104" height="57"/>
@@ -133,6 +138,11 @@
                             <constraint firstAttribute="bottom" secondItem="K6M-M3-bu4" secondAttribute="bottom" constant="21" id="mLl-Kh-VPI"/>
                             <constraint firstItem="K6M-M3-bu4" firstAttribute="top" secondItem="cph-wa-GWf" secondAttribute="bottom" constant="14" id="nlO-Xh-5tG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EWa-sK-bsP"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

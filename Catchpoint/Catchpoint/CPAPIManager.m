@@ -46,6 +46,7 @@ NSString * const clientSecret = @"6156945d-25b1-44be-9f0b-8208db62fc45";
     
     NSLog(@"Processing GET: %@", uri);
     
+
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.requestSerializer = [AFJSONRequestSerializer serializer];

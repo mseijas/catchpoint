@@ -72,6 +72,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="0FB-W1-eHF"/>
                                 <exclude reference="RGN-ls-CIz"/>
                                 <exclude reference="WL6-w8-0cK"/>
                             </mask>
