@@ -1,3 +1,6 @@
+xcodeproj 'Catchpoint.xcodeproj'
+
 pod 'AFNetworking'
 pod 'AFNetworking-Synchronous/2.x'
 pod 'FSLineChart'
+pod 'SVProgressHUD'

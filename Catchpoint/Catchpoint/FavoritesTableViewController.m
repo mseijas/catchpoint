@@ -8,6 +8,7 @@
 
 #import "CPAPIParser.h"
 #import "CPAPIRequest.h"
+#import "SVProgressHUD.h"
 
 #import "FavoritesTableViewController.h"
 #import "CPSyntheticFavoriteTableViewCell.h"
@@ -48,8 +49,16 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)addFavorites:(id)sender {
+    [SVProgressHUD show];
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self performSegueWithIdentifier:@"addFavorites" sender:sender];
+    });
+}
 
 - (void)loadTestData {
+    [SVProgressHUD show];
+    dispatch_async(dispatch_get_main_queue(), ^ {
     NSString *testIDs;
     
     if (self.selectedTests.count > 0) {
@@ -85,7 +94,9 @@
         }
     }
     
-    NSLog(@"CURRENT TEST DATA: %@", self.testData);
+//    NSLog(@"CURRENT TEST DATA: %@", self.testData);
+    [SVProgressHUD dismiss];
+    });
 }
 
 #pragma mark - Table view data source

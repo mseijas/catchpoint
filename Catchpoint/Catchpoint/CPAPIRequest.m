@@ -19,7 +19,7 @@
     
     NSDictionary *rawData = [CPAPIManager apiGET:requestURI];
     
-    NSLog(@"RAW DATA: %@", [DataUtils dataToJSON:rawData]);
+    //NSLog(@"RAW DATA: %@", [DataUtils dataToJSON:rawData]);
     
     if (rawData) {
         if (raw == NO) {

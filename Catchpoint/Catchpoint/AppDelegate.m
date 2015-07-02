@@ -10,6 +10,8 @@
 #import "DataUtils.h"
 #import "TimeUtils.h"
 
+#import "SVProgressHUD.h"
+
 #import "AppDelegate.h"
 
 
@@ -32,7 +34,7 @@
 //    NSDictionary *rawData = [CPAPIRequest getTestWithID:31408];
     
 //    NSLog(@"%@", [DataUtils dataToJSON:rawData]);
-    
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     return YES;
 }
 

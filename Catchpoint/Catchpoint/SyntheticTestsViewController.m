@@ -9,6 +9,7 @@
 #import "CPAPIParser.h"
 #import "CPAPIRequest.h"
 #import "DataUtils.h"
+#import "SVProgressHUD.h"
 
 #import "SyntheticTestsViewController.h"
 #import "CPSyntheticTestCell.h"
@@ -34,6 +35,7 @@
     
     self.selectedTests = [[NSMutableArray alloc] init];
     self.allTests = [CPAPIParser getAllActiveTests];
+    [SVProgressHUD dismiss];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticTestCell"
                                                bundle:[NSBundle mainBundle]]
