@@ -90,6 +90,14 @@
     cell.testType.text = testType;
     cell.testType.backgroundColor = [CPAPIParser colorForTestTypeID:self.allTests[indexPath.row][@"type"][@"id"]];
     
+//    cell.selected = NO;
+//    for (NSDictionary *test in self.selectedTests) {
+//        if ((int)test[@"id"] == (int)cell.test[@"id"]) {
+//            NSLog(@"Found selected test: %i", (int)test[@"id"]);
+//            cell.selected = YES;
+//        }
+//    }
+    
     return cell;
 }
 
