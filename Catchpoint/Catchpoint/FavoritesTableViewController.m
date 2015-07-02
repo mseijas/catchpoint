@@ -43,6 +43,12 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)refreshTestData:(id)sender {
+    [self loadTestData];
+    [self.tableView reloadData];
+}
+
+
 - (void)loadTestData {
     NSString *testIDs;
     

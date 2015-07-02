@@ -322,10 +322,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorites" id="Vc2-7o-Pcn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="22d-ws-0nn">
-                            <color key="tintColor" red="0.63137254901960782" green="0.81960784313725488" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="wkD-mZ-hnv">
+                            <color key="tintColor" red="0.63137254899999995" green="0.81960784310000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="0tX-qa-wxx" kind="presentation" id="jHr-qM-3ZG"/>
+                                <segue destination="0tX-qa-wxx" kind="presentation" id="02P-Rj-zlt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="inq-xo-IHR">
+                            <color key="tintColor" red="0.63137254899999995" green="0.81960784310000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refreshTestData:" destination="Kzl-QW-pxW" id="UfD-w5-L2N"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
