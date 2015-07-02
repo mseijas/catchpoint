@@ -10,6 +10,19 @@
 #import "CPAPIParser.h"
 #import "TimeUtils.h"
 
+#define testTypeWeb             [UIColor colorWithRed:0.325 green:0.769 blue:0.792 alpha:1]
+#define testTypeWebTransaction  [UIColor colorWithRed:0.333 green:0.541 blue:0.800 alpha:1]
+#define testTypeHTML            [UIColor colorWithRed:0.855 green:0.769 blue:0.318 alpha:1]
+#define testTypeFTP             [UIColor colorWithRed:0.322 green:0.792 blue:0.498 alpha:1]
+#define testTypeTCP             [UIColor colorWithRed:0.824 green:0.580 blue:0.318 alpha:1]
+#define testTypeDNS             [UIColor colorWithRed:0.827 green:0.439 blue:0.635 alpha:1]
+#define testTypePing            [UIColor colorWithRed:0.620 green:0.459 blue:0.839 alpha:1]
+#define testTypeSMTP            [UIColor colorWithRed:0.859 green:0.471 blue:0.475 alpha:1]
+#define testTypeAPI             [UIColor colorWithRed:0.557 green:0.773 blue:0.286 alpha:1]
+#define testTypeStreaming       [UIColor colorWithRed:0.361 green:0.659 blue:0.761 alpha:1]
+#define testTypeTraceroute      [UIColor colorWithRed:0.816 green:0.431 blue:0.765 alpha:1]
+#define testTypeSSH             [UIColor colorWithRed:0.188 green:0.647 blue:0.663 alpha:1]
+
 
 @implementation CPAPIParser
 
@@ -140,7 +153,54 @@
         }
     }
     
+    NSLog(@"Active Tests: %@", activeTests);
     return activeTests;
+}
+
++ (UIColor *)colorForTestTypeID:(NSNumber *)testTypeID {
+    UIColor *color;
+    
+    switch ([testTypeID intValue]) {
+        case 0:
+            color = testTypeWeb;
+            break;
+        case 1:
+            color = testTypeWebTransaction;
+            break;
+        case 2:
+            color = testTypeHTML;
+            break;
+        case 3:
+            color = testTypeFTP;
+            break;
+        case 4:
+            color = testTypeTCP;
+            break;
+        case 5:
+            color = testTypeDNS;
+            break;
+        case 6:
+            color = testTypePing;
+            break;
+        case 7:
+            color = testTypeSMTP;
+            break;
+        case 8:
+            color = testTypeAPI;
+            break;
+        case 9:
+            color = testTypeStreaming;
+            break;
+        case 10:
+            color = testTypeSSH;
+            break;
+        case 11:
+            color = testTypeTraceroute;
+            break;
+        default:
+            [NSException raise:NSGenericException format:@"Unexpected testTypeID"];
+    }
+    return color;
 }
 
 @end

@@ -75,6 +75,7 @@
     cell.testName.text = testName;
     cell.productName.text = productName;
     cell.testType.text = testType;
+    cell.testType.backgroundColor = [CPAPIParser colorForTestTypeID:self.allTests[indexPath.row][@"type"][@"id"]];
     
     return cell;
 }

@@ -41,6 +41,8 @@
 }
 
 - (void)setCellStyle {
+    self.testType.layer.cornerRadius = 2.0;
+    self.testType.clipsToBounds = YES;
     self.testContentView.layer.cornerRadius = 5.0;
     self.testContentView.layer.borderWidth = 1.0;
     self.testContentView.layer.borderColor = [UIColor colorWithRed:214.0 / 255.0 green:214.0 / 255.0 blue:214.0 / 255.0 alpha:1.0].CGColor;

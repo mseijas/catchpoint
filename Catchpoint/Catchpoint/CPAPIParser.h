@@ -30,5 +30,6 @@ typedef NS_ENUM(NSInteger, TimeStampFormatOptions) {
 + (NSDictionary *)getAllProductsForData:(NSArray *)data;
 
 + (NSArray *)getAllActiveTests;
++ (UIColor *)colorForTestTypeID:(NSNumber *)testTypeID;
 
 @end
