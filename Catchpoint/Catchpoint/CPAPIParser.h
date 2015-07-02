@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, TimeStampFormatOptions) {
 
 + (NSString *)getTestNameFromSyntheticData:(NSArray *)data;
 
-+ (NSArray *)getMetric:(SyntheticMetricType)metricType fromSyntheticData:(NSArray *)data;
++ (id)getMetric:(SyntheticMetricType)metricType fromSyntheticData:(NSArray *)data average:(BOOL)average;
 + (NSArray *)getUTCTimeStampFromSyntheticData:(NSArray *)data;
 + (NSArray *)getUTCTimeObjectsFromSyntheticData:(NSArray *)data;
 + (NSArray *)getLocalTimeStampFromSyntheticData:(NSArray *)data withOptions:(TimeStampFormatOptions)formatOption;

@@ -305,7 +305,7 @@
         <scene sceneID="RdF-TK-B7M">
             <objects>
                 <tableViewController id="Kzl-QW-pxW" customClass="FavoritesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="126" sectionHeaderHeight="22" sectionFooterHeight="22" id="07R-9g-xX5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="126" sectionHeaderHeight="22" sectionFooterHeight="22" id="07R-9g-xX5">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>

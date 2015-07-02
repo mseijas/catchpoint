@@ -70,7 +70,7 @@
     
     NSArray *timeStamps = [CPAPIParser getUTCTimeObjectsFromSyntheticData:self.data];
     self.testLabel.text = [CPAPIParser getTestNameFromSyntheticData:self.data];
-    NSArray *chartData = [CPAPIParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:self.data];
+    NSArray *chartData = [CPAPIParser getMetric:SyntheticMetricWebpageResponse fromSyntheticData:self.data average:nil];
     
     
     self.chart.labelForIndex = ^(NSUInteger item) {

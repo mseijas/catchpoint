@@ -7,11 +7,15 @@
 //
 
 #import "CPAPIParser.h"
+#import "CPAPIRequest.h"
 
 #import "FavoritesTableViewController.h"
+#import "CPSyntheticFavoriteTableViewCell.h"
 #import "CPSyntheticTestCell.h"
 
 @interface FavoritesTableViewController ()
+
+@property (strong, nonatomic) NSMutableDictionary *testData;
 
 @end
 
@@ -21,6 +25,9 @@
     [super viewDidLoad];
     
     self.selectedTests = [[NSArray alloc] init];
+    self.testData = [[NSMutableDictionary alloc] init];
+    
+    [self loadTestData];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticFavoriteTableViewCell"
                                                bundle:[NSBundle mainBundle]]
@@ -33,6 +40,46 @@
     //NSLog(@"unwindToFavorites");
     //NSLog(@"Selected tests: %@", self.selectedTests);
     [self.tableView reloadData];
+    [self loadTestData];
+}
+
+- (void)loadTestData {
+    NSString *testIDs;
+    
+    if (self.selectedTests.count > 0) {
+        for (int i=0; i < self.selectedTests.count; i++) {
+            if (i == 0) {
+                testIDs = [NSString stringWithFormat:@"%@", self.selectedTests[i][@"id"]];
+            }
+            else {
+                testIDs = [NSString stringWithFormat:@"%@,%@", testIDs, self.selectedTests[i][@"id"]];
+            }
+        }
+    }
+    
+    if (testIDs) {
+        NSArray *testData = [CPAPIRequest getPerformanceForTest:testIDs raw:NO];
+        //NSLog(@"TestData: %@", testData);
+        
+        for (int i=0 ; i < self.selectedTests.count ; i++) {
+            
+            int currentTest = (int)self.selectedTests[i][@"id"];
+            NSMutableArray *currentTestData = [[NSMutableArray alloc] init];
+        
+            for (int j=0 ; j < testData.count ; j++) {
+                int testID = (int)testData[j][@"breakdown_1"][@"id"];
+                
+                if (testID == currentTest) {
+                    NSDictionary *currentData = testData[j];
+                    [currentTestData addObject:currentData];
+                }
+            }
+            
+            [self.testData setObject:currentTestData forKey:[NSNumber numberWithInt:currentTest]];
+        }
+    }
+    
+    NSLog(@"CURRENT TEST DATA: %@", self.testData);
 }
 
 #pragma mark - Table view data source
@@ -51,10 +98,11 @@
     
     static NSString *CellIdentifier = @"CPSyntheticFavoriteTableViewCell";
     
-    CPSyntheticTestCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CPSyntheticFavoriteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.test = self.selectedTests[indexPath.row];
     
+    NSString *testID = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"id"]];
     NSString *testName = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"name"]];
     NSString *testType = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"type"][@"name"]];
     NSString *productName = [NSString stringWithFormat:@"%@", self.selectedTests[indexPath.row][@"product_name"]];
@@ -66,61 +114,15 @@
     cell.testType.text = testType;
     cell.testType.backgroundColor = [CPAPIParser colorForTestTypeID:self.selectedTests[indexPath.row][@"type"][@"id"]];
     
+    
+    NSArray *testData = [CPAPIRequest getPerformanceForTest:testID raw:NO];
+    NSNumber *responseAvg = [CPAPIParser getMetric:SyntheticMetricResponse fromSyntheticData:testData average:YES];
+    NSNumber *availabilityAvg = [CPAPIParser getMetric:SyntheticMetricPctAvailability fromSyntheticData:testData average:YES];
+
+    cell.responseMetric.text = [NSString stringWithFormat:@"%.2f", [responseAvg doubleValue]];
+    cell.availabilityMetric.text = [NSString stringWithFormat:@"%.2f", [availabilityAvg doubleValue]];
+    
     return cell;
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -31,14 +31,9 @@
             [self setCellStyle];
         }];
         self.checkbox.image = [UIImage imageNamed:@"checkboxOn"];
-    } else {
-        self.testContentView.layer.backgroundColor = [UIColor colorWithRed:213.0 / 255.0 green:213.0 / 255.0 blue:213.0 / 255.0 alpha:1.0].CGColor;
-        [UIView animateWithDuration:0.4 animations:^{
-            [self setCellStyle];
-        }];
-        self.checkbox.image = [UIImage imageNamed:@"checkboxOff"];
     }
 }
+
 
 - (void)setCellStyle {
     self.testType.layer.cornerRadius = 2.0;
