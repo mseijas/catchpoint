@@ -165,12 +165,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-//    CPSyntheticFavoriteTableViewCell *cell = (CPSyntheticFavoriteTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-//    self.selectedTestID = cell.testID;
-    [self.selectedTestData removeAllObjects];
-    [self.selectedTestData addObject:self.selectedTests[indexPath.row]];
+    [SVProgressHUD show];
+
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self.selectedTestData removeAllObjects];
+        [self.selectedTestData addObject:self.selectedTests[indexPath.row]];
+        
+        [self performSegueWithIdentifier:@"showTestPerformance" sender:self];
+    });
     
-    [self performSegueWithIdentifier:@"showTestPerformance" sender:self];
+    
 }
 
 @end

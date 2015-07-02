@@ -25,7 +25,7 @@
     
     for (int i=0 ; i < metrics.count ; i++) {
         SyntheticMetricType metricType = (SyntheticMetricType)[metrics[i] intValue];
-        NSLog(@"Synthetic Metric Type: %ld", metricType);
+        //NSLog(@"Synthetic Metric Type: %ld", metricType);
         
         NSArray *metricData = [CPAPIParser getMetric:metricType fromSyntheticData:data average:nil];
         NSMutableArray *yValues = [[NSMutableArray alloc] init];
@@ -36,7 +36,7 @@
             
             [yValues addObject:[[ChartDataEntry alloc] initWithValue:metricValue xIndex:[metricData indexOfObject:metricNum]]];
         }
-        NSLog(@"YValues: %@", yValues);
+        //NSLog(@"YValues: %@", yValues);
         
         LineChartDataSet *metricDataSet = [[LineChartDataSet alloc] initWithYVals:yValues label:[CPAPIParser metricNameForType:metricType]];
         [metricDataSet setColor:[CPAPIParser metricColorForType:metricType]];
@@ -44,7 +44,7 @@
         metricDataSet.drawCirclesEnabled = NO;
         
         [dataSets addObject:metricDataSet];
-        NSLog(@"DATA SETS: %@", dataSets);
+        //NSLog(@"DATA SETS: %@", dataSets);
     }
     
     LineChartData *chartData = [[LineChartData alloc] initWithXVals:xValues dataSets:dataSets];

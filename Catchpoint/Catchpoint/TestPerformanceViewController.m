@@ -7,6 +7,7 @@
 //
 
 #import "CPAPIParser.h"
+#import "SVProgressHUD.h"
 
 #import "TestPerformanceViewController.h"
 #import "CPSyntheticSummaryCell.h"
@@ -27,6 +28,11 @@
 //                                               bundle:[NSBundle mainBundle]]
 //         forCellReuseIdentifier:@"CPSyntheticChartCell"];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [SVProgressHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning {
