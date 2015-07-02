@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) NSArray *allTests;
 @property (strong, nonatomic) NSDictionary *allProducts;
+@property (strong, nonatomic) NSMutableArray *selectedTests;
 
 @end
 
@@ -30,14 +31,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.selectedTests = [[NSMutableArray alloc] init];
     self.allTests = [CPAPIParser getAllActiveTests];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticTestCell"
                                                bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"CPSyntheticTestCell"];
+    
+    [self updateSelectionCount];
 }
 
 - (IBAction)applySelectedTests:(id)sender {
+}
+
+- (void)updateSelectionCount {
+    self.itemsSelected.title = [NSString stringWithFormat:@"%lu items selected", (unsigned long)self.selectedTests.count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -56,6 +64,10 @@
     
     CPSyntheticTestCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    cell.test = self.allTests[indexPath.row];
+    
+    NSLog(@"TEST: %@", cell.test);
+    
     NSString *testName = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"name"]];
     NSString *testType = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"type"][@"name"]];
     NSString *productName = [NSString stringWithFormat:@"%@", self.allTests[indexPath.row][@"product_name"]];
@@ -67,5 +79,18 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CPSyntheticTestCell *cell = (CPSyntheticTestCell *)[tableView cellForRowAtIndexPath:indexPath];
+
+    [self.selectedTests addObject:cell.test];
+    [self updateSelectionCount];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CPSyntheticTestCell *cell = (CPSyntheticTestCell *)[tableView cellForRowAtIndexPath:indexPath];
+
+    [self.selectedTests removeObject:cell.test];
+    [self updateSelectionCount];
+}
 
 @end

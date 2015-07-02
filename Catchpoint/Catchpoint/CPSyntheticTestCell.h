@@ -10,6 +10,7 @@
 
 @interface CPSyntheticTestCell : UITableViewCell
 
+@property (strong, nonatomic) NSDictionary *test;
 
 @property (strong, nonatomic) IBOutlet UIImageView *checkbox;
 
