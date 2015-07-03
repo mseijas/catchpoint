@@ -109,10 +109,12 @@
         
         if (indexPath.row == 0) {
         
-            NSArray *metrics = [NSArray arrayWithObjects:[NSNumber numberWithInteger:SyntheticMetricWebpageResponse],
-                                [NSNumber numberWithInteger:SyntheticMetricResponse],nil];
+            NSArray *metrics = [NSArray arrayWithObjects:[NSNumber numberWithInteger:SyntheticMetricResponse],
+                                [NSNumber numberWithInteger:SyntheticMetricWebpageResponse],nil];
             
             cell.chart = [CPSyntheticChart initChart:cell.chart withData:testData includeMetrics:metrics];
+            cell.chart.leftAxis.startAtZeroEnabled = YES;
+            cell.chart.rightAxis.startAtZeroEnabled = YES;
         }
         
         if (indexPath.row == 1) {

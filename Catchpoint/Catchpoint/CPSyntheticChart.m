@@ -44,7 +44,7 @@
         
         LineChartDataSet *metricDataSet = [[LineChartDataSet alloc] initWithYVals:yValues label:[CPAPIParser metricNameForType:metricType]];
         [metricDataSet setColor:[CPAPIParser metricColorForType:metricType]];
-        metricDataSet.lineWidth = 3.0;
+        metricDataSet.lineWidth = 1.5;
         metricDataSet.drawCirclesEnabled = NO;
         
         [dataSets addObject:metricDataSet];
