@@ -155,6 +155,9 @@
         //Array file didn't exist... create a new one
         self.selectedTests = [[NSMutableArray alloc] init];
     }
+    else {
+        [self refreshTestData:self];
+    }
 }
 
 - (void)saveFavoritesArray {
