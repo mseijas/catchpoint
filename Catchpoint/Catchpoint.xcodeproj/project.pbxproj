@@ -13,6 +13,8 @@
 		604F0D6F1B433EC5009A3D07 /* TestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604F0D6E1B433EC5009A3D07 /* TestsTableViewController.m */; };
 		6083089B1B45D970005B49DA /* CPSyntheticSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6083089A1B45D970005B49DA /* CPSyntheticSummaryCell.m */; };
 		6083089E1B45E3C4005B49DA /* CPSyntheticChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6083089D1B45E3C4005B49DA /* CPSyntheticChartCell.m */; };
+		608308A21B46E75C005B49DA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608308A01B46E75C005B49DA /* Fabric.framework */; };
+		608308A31B46E75C005B49DA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608308A11B46E75C005B49DA /* Crashlytics.framework */; };
 		60893D471B3C8FDF0061A5ED /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60893D461B3C8FD60061A5ED /* Charts.framework */; };
 		60893D481B3C8FDF0061A5ED /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60893D461B3C8FD60061A5ED /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60893D4F1B3DDB890061A5ED /* CPSyntheticChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 60893D4E1B3DDB890061A5ED /* CPSyntheticChart.m */; };
@@ -89,6 +91,8 @@
 		6083089A1B45D970005B49DA /* CPSyntheticSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSyntheticSummaryCell.m; path = ../CPSyntheticSummaryCell.m; sourceTree = "<group>"; };
 		6083089C1B45E3C4005B49DA /* CPSyntheticChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticChartCell.h; sourceTree = "<group>"; };
 		6083089D1B45E3C4005B49DA /* CPSyntheticChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticChartCell.m; sourceTree = "<group>"; };
+		608308A01B46E75C005B49DA /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		608308A11B46E75C005B49DA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		60893D411B3C8FD60061A5ED /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Charts.xcodeproj; sourceTree = "<group>"; };
 		60893D4D1B3DDB890061A5ED /* CPSyntheticChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSyntheticChart.h; sourceTree = "<group>"; };
 		60893D4E1B3DDB890061A5ED /* CPSyntheticChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSyntheticChart.m; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			files = (
 				2384CA7099619450330B29A3 /* libPods.a in Frameworks */,
 				60893D471B3C8FDF0061A5ED /* Charts.framework in Frameworks */,
+				608308A31B46E75C005B49DA /* Crashlytics.framework in Frameworks */,
+				608308A21B46E75C005B49DA /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +214,8 @@
 				57B2A10492C8507422621178 /* Pods */,
 				D9FA6C2FE6BA9EA55987B23C /* Frameworks */,
 				60D1A51C1B3B688200E9CDAC /* Catchpoint-Bridging-Header.h */,
+				608308A01B46E75C005B49DA /* Fabric.framework */,
+				608308A11B46E75C005B49DA /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -327,6 +335,7 @@
 				60F32C941B31FF7300BDCA16 /* Resources */,
 				F7FF1E8217E051B3D83C1B05 /* Copy Pods Resources */,
 				60893D4B1B3C8FDF0061A5ED /* Embed Frameworks */,
+				6083089F1B46E732005B49DA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -367,6 +376,7 @@
 				TargetAttributes = {
 					60F32C951B31FF7300BDCA16 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = UNDNQ26EEW;
 					};
 					60F32CAE1B31FF7300BDCA16 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -432,6 +442,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6083089F1B46E732005B49DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 3658625a4ba958dacf9b85296e5ca0133e497fc5 d3827f5e7d1d7839de0c32559fd793ffb9b017a8c3ef684794de27cc2e76ac16";
+		};
 		A33F890DAEDD5EEC9318A4F9 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -624,16 +647,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Catchpoint-bctuuwqvucbwmdaidqqebebfbhgi/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"/Users/matias/Downloads/ios-charts-master/Charts/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Catchpoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Catchpoint-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -645,16 +672,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Catchpoint-bctuuwqvucbwmdaidqqebebfbhgi/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"/Users/matias/Downloads/ios-charts-master/Charts/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Catchpoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Catchpoint-Bridging-Header.h";
 			};
 			name = Release;

@@ -39,6 +39,10 @@
         self.selectedTests = [[NSMutableArray alloc] init];
     }
     
+    [self.view addGestureRecognizer:
+     [[UITapGestureRecognizer alloc] initWithTarget:self
+                                             action:@selector(hideKeyboard:)]];
+    
     self.allTests = [CPAPIParser getAllActiveTests];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticTestCell"
@@ -56,6 +60,10 @@
 
     [self updateSelectionCount];
 
+}
+
+- (IBAction)hideKeyboard:(id)sender {
+    [self.view endEditing:YES];
 }
 
 - (IBAction)applySelectedTests:(id)sender {

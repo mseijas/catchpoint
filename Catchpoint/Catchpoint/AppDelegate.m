@@ -12,6 +12,10 @@
 
 #import "SVProgressHUD.h"
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
+
 #import "AppDelegate.h"
 
 
@@ -23,17 +27,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-//    NSDictionary *rawData = [CPAPIManager apiGET:@"/tests"];
-//    NSDictionary *rawData = [CPAPIManager apiGET:@"/tests?name=Cloudfront"];
-//    NSDictionary *rawData = [CPAPIManager apiGET:@"/products"];
-    
-//    NSDictionary *rawData = [CPAPIRequest getAllProducts];
-    
-//    NSDictionary *rawData = [CPAPIRequest getAllTestsWithName:@"Amazon"];
-//    NSDictionary *rawData = [CPAPIRequest getTestWithID:31408];
-    
-//    NSLog(@"%@", [DataUtils dataToJSON:rawData]);
+    [Fabric with:@[CrashlyticsKit]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     return YES;
 }
