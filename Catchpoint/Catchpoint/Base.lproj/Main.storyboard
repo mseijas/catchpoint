@@ -487,54 +487,6 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-uf-sKN">
-                                            <rect key="frame" x="255" y="0.0" width="104" height="57"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7r-kp-3MB" userLabel="Product Name">
-                                                    <rect key="frame" x="13" y="6" width="67" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="67" id="Bn7-6E-fCj"/>
-                                                        <constraint firstAttribute="height" constant="21" id="p7e-5w-Gve"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                                    <color key="textColor" red="0.71372549019999998" green="0.71372549019999998" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-rA-Rlz" userLabel="Test Name">
-                                                    <rect key="frame" x="13" y="25" width="67" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="67" id="6fk-Gk-qH3"/>
-                                                        <constraint firstAttribute="height" constant="21" id="XjR-Kg-eRX"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                                    <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.93917179110000004" green="0.93673312659999997" blue="0.97468000649999997" alpha="0.5" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="57" id="JTA-kv-GBL"/>
-                                                <constraint firstAttribute="width" constant="104" id="LYY-Pv-drk"/>
-                                                <constraint firstItem="m7r-kp-3MB" firstAttribute="top" secondItem="aRD-uf-sKN" secondAttribute="top" constant="6" id="Llx-dA-rq3"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="PPN-jQ-DEG"/>
-                                                <constraint firstItem="m7r-kp-3MB" firstAttribute="leading" secondItem="aRD-uf-sKN" secondAttribute="leading" constant="13" id="VmE-OL-whv"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="XXc-3x-1gv"/>
-                                                <constraint firstItem="ybf-rA-Rlz" firstAttribute="top" secondItem="aRD-uf-sKN" secondAttribute="top" constant="25" id="bth-bR-N8k"/>
-                                                <constraint firstItem="ybf-rA-Rlz" firstAttribute="leading" secondItem="aRD-uf-sKN" secondAttribute="leading" constant="13" id="rJI-qn-XjZ"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="PPN-jQ-DEG"/>
-                                                    <exclude reference="XXc-3x-1gv"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular">
-                                                <mask key="constraints">
-                                                    <include reference="PPN-jQ-DEG"/>
-                                                    <include reference="XXc-3x-1gv"/>
-                                                </mask>
-                                            </variation>
-                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dit-ER-hrW">
                                             <rect key="frame" x="255" y="56" width="104" height="57"/>
                                             <subviews>
@@ -583,6 +535,54 @@
                                                 </mask>
                                             </variation>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-uf-sKN">
+                                            <rect key="frame" x="255" y="0.0" width="104" height="57"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7r-kp-3MB" userLabel="Product Name">
+                                                    <rect key="frame" x="13" y="6" width="67" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="67" id="Bn7-6E-fCj"/>
+                                                        <constraint firstAttribute="height" constant="21" id="p7e-5w-Gve"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                                    <color key="textColor" red="0.71372549019999998" green="0.71372549019999998" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-rA-Rlz" userLabel="Test Name">
+                                                    <rect key="frame" x="13" y="25" width="67" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="67" id="6fk-Gk-qH3"/>
+                                                        <constraint firstAttribute="height" constant="21" id="XjR-Kg-eRX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93917179110000004" green="0.93673312659999997" blue="0.97468000649999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="57" id="JTA-kv-GBL"/>
+                                                <constraint firstAttribute="width" constant="104" id="LYY-Pv-drk"/>
+                                                <constraint firstItem="m7r-kp-3MB" firstAttribute="top" secondItem="aRD-uf-sKN" secondAttribute="top" constant="6" id="Llx-dA-rq3"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="PPN-jQ-DEG"/>
+                                                <constraint firstItem="m7r-kp-3MB" firstAttribute="leading" secondItem="aRD-uf-sKN" secondAttribute="leading" constant="13" id="VmE-OL-whv"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="XXc-3x-1gv"/>
+                                                <constraint firstItem="ybf-rA-Rlz" firstAttribute="top" secondItem="aRD-uf-sKN" secondAttribute="top" constant="25" id="bth-bR-N8k"/>
+                                                <constraint firstItem="ybf-rA-Rlz" firstAttribute="leading" secondItem="aRD-uf-sKN" secondAttribute="leading" constant="13" id="rJI-qn-XjZ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="PPN-jQ-DEG"/>
+                                                    <exclude reference="XXc-3x-1gv"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular">
+                                                <mask key="constraints">
+                                                    <include reference="PPN-jQ-DEG"/>
+                                                    <include reference="XXc-3x-1gv"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="fdp-iA-mRe" firstAttribute="top" secondItem="RcA-lu-01w" secondAttribute="bottom" constant="14" id="4nj-ap-9V7"/>
@@ -607,8 +607,8 @@
                                             <exclude reference="fdp-iA-mRe"/>
                                             <exclude reference="RcA-lu-01w"/>
                                             <exclude reference="SIA-oE-Tig"/>
-                                            <exclude reference="aRD-uf-sKN"/>
                                             <exclude reference="Dit-ER-hrW"/>
+                                            <exclude reference="aRD-uf-sKN"/>
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="Dea-0S-Wjf"/>
@@ -634,8 +634,8 @@
                                             <include reference="fdp-iA-mRe"/>
                                             <include reference="RcA-lu-01w"/>
                                             <include reference="SIA-oE-Tig"/>
-                                            <include reference="aRD-uf-sKN"/>
                                             <include reference="Dit-ER-hrW"/>
+                                            <include reference="aRD-uf-sKN"/>
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="Dea-0S-Wjf"/>
@@ -672,9 +672,43 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rPy-1o-qaO" id="Do9-1h-5bE">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-d5-nhi" customClass="LineChartView" customModule="Charts">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-d5-nhi">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaH-18-Ogd" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="QaH-18-Ogd" secondAttribute="trailing" constant="13" id="5X1-33-kQk"/>
+                                                <constraint firstItem="QaH-18-Ogd" firstAttribute="top" secondItem="QV8-d5-nhi" secondAttribute="top" constant="8" id="M4x-YP-hil"/>
+                                                <constraint firstItem="QaH-18-Ogd" firstAttribute="leading" secondItem="QV8-d5-nhi" secondAttribute="leading" constant="13" id="evi-Gx-QZx"/>
+                                                <constraint firstAttribute="bottom" secondItem="QaH-18-Ogd" secondAttribute="bottom" constant="8" id="v05-n5-Tdp"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="QaH-18-Ogd"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="5X1-33-kQk"/>
+                                                    <exclude reference="M4x-YP-hil"/>
+                                                    <exclude reference="evi-Gx-QZx"/>
+                                                    <exclude reference="v05-n5-Tdp"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular">
+                                                <mask key="subviews">
+                                                    <include reference="QaH-18-Ogd"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="5X1-33-kQk"/>
+                                                    <include reference="M4x-YP-hil"/>
+                                                    <include reference="evi-Gx-QZx"/>
+                                                    <include reference="v05-n5-Tdp"/>
+                                                </mask>
+                                            </variation>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -709,6 +743,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="chart" destination="QaH-18-Ogd" id="h97-81-fBm"/>
                                     <outlet property="chartView" destination="QV8-d5-nhi" id="rii-Mg-Fdu"/>
                                 </connections>
                             </tableViewCell>

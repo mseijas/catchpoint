@@ -11,6 +11,7 @@
 
 @interface CPSyntheticChartCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet LineChartView *chartView;
+@property (weak, nonatomic) IBOutlet UIView *chartView;
+@property (weak, nonatomic) IBOutlet LineChartView *chart;
 
 @end

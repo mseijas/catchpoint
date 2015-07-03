@@ -30,13 +30,17 @@
         NSArray *metricData = [CPAPIParser getMetric:metricType fromSyntheticData:data average:nil];
         NSMutableArray *yValues = [[NSMutableArray alloc] init];
         
+        int xIndex = 0;
+        
         for (NSNumber *metricNum in metricData) {
             double metricValue = (double)[metricNum doubleValue];
 //            NSLog(@"metric value = %f", metricValue);
             
-            [yValues addObject:[[ChartDataEntry alloc] initWithValue:metricValue xIndex:[metricData indexOfObject:metricNum]]];
+            [yValues addObject:[[ChartDataEntry alloc] initWithValue:metricValue xIndex:xIndex]];
+            
+            xIndex++;
         }
-        //NSLog(@"YValues: %@", yValues);
+        NSLog(@"YValues: %@", yValues);
         
         LineChartDataSet *metricDataSet = [[LineChartDataSet alloc] initWithYVals:yValues label:[CPAPIParser metricNameForType:metricType]];
         [metricDataSet setColor:[CPAPIParser metricColorForType:metricType]];

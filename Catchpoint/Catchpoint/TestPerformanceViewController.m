@@ -51,7 +51,7 @@
         return 1;
     }
     if (section == 1) {
-        return 1;
+        return 2;
     }
     return 0;
 }
@@ -105,12 +105,25 @@
     
     if (indexPath.section == 1) {
         
-        
         NSArray *testData = self.testData[1];
-        NSArray *metrics = [NSArray arrayWithObjects:[NSNumber numberWithInteger:SyntheticMetricWebpageResponse],
-                            [NSNumber numberWithInteger:SyntheticMetricResponse],nil];
         
-        cell.chartView = [CPSyntheticChart initChart:cell.chartView withData:testData includeMetrics:metrics];
+        if (indexPath.row == 0) {
+        
+            NSArray *metrics = [NSArray arrayWithObjects:[NSNumber numberWithInteger:SyntheticMetricWebpageResponse],
+                                [NSNumber numberWithInteger:SyntheticMetricResponse],nil];
+            
+            cell.chart = [CPSyntheticChart initChart:cell.chart withData:testData includeMetrics:metrics];
+        }
+        
+        if (indexPath.row == 1) {
+            
+            cell.chart = [CPSyntheticChart initChart:cell.chart
+                                                            withData:testData
+                                                      includeMetrics:[NSArray arrayWithObjects:[NSNumber numberWithInteger:SyntheticMetricPctAvailability], nil]];
+            
+            cell.chart.leftAxis.startAtZeroEnabled = YES;
+            cell.chart.rightAxis.startAtZeroEnabled = YES;
+        }
         /*
         
          NSArray *data = [CPAPIRequest getPerformanceForTest:@"33621" raw:NO];
