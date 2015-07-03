@@ -10,4 +10,7 @@
 
 @interface SyntheticTestsViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *selectedTests;
+@property (strong, nonatomic) NSMutableArray *favoriteTests;
+
 @end

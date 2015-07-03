@@ -22,9 +22,10 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemsSelected;
 
+
 @property (strong, nonatomic) NSArray *allTests;
 @property (strong, nonatomic) NSDictionary *allProducts;
-@property (strong, nonatomic) NSMutableArray *selectedTests;
+
 
 @end
 
@@ -33,9 +34,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.selectedTests = [[NSMutableArray alloc] init];
+    self.selectedTests = self.favoriteTests;
+    if (!self.selectedTests) {
+        self.selectedTests = [[NSMutableArray alloc] init];
+    }
+    
     self.allTests = [CPAPIParser getAllActiveTests];
-//    [SVProgressHUD dismiss];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticTestCell"
                                                bundle:[NSBundle mainBundle]]
@@ -47,6 +51,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [SVProgressHUD dismiss];
+    
+//    NSLog(@"SELECTED TESTS: %@", self.selectedTests);
+
+    [self updateSelectionCount];
+
 }
 
 - (IBAction)applySelectedTests:(id)sender {
@@ -100,27 +109,23 @@
     cell.testType.text = testType;
     cell.testType.backgroundColor = [CPAPIParser colorForTestTypeID:self.allTests[indexPath.row][@"type"][@"id"]];
     
-//    cell.selected = NO;
-//    for (NSDictionary *test in self.selectedTests) {
-//        if ((int)test[@"id"] == (int)cell.test[@"id"]) {
-//            NSLog(@"Found selected test: %i", (int)test[@"id"]);
-//            cell.selected = YES;
-//        }
-//    }
+    if ([self.selectedTests containsObject:cell.test]) {
+        [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }
+    
+//    NSLog(@"SELECTED: %i", self.selectedTests.count);
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CPSyntheticTestCell *cell = (CPSyntheticTestCell *)[tableView cellForRowAtIndexPath:indexPath];
-
     [self.selectedTests addObject:cell.test];
     [self updateSelectionCount];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     CPSyntheticTestCell *cell = (CPSyntheticTestCell *)[tableView cellForRowAtIndexPath:indexPath];
-
     [self.selectedTests removeObject:cell.test];
     [self updateSelectionCount];
 }

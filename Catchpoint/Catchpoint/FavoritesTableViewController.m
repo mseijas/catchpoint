@@ -14,12 +14,11 @@
 #import "CPSyntheticFavoriteTableViewCell.h"
 #import "CPSyntheticTestCell.h"
 #import "TestPerformanceViewController.h"
+#import "SyntheticTestsViewController.h"
 
 @interface FavoritesTableViewController ()
 
 @property (strong, nonatomic) NSMutableDictionary *testData;
-
-//@property (nonatomic) int selectedTestID;
 @property (strong, nonatomic) NSMutableArray *selectedTestData;
 
 @end
@@ -29,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.selectedTests = [[NSArray alloc] init];
+    self.selectedTests = [[NSMutableArray alloc] init];
     self.testData = [[NSMutableDictionary alloc] init];
     self.selectedTestData = [[NSMutableArray alloc] init];
     
@@ -50,8 +49,6 @@
 }
 
 - (IBAction)unwindToFavorites:(UIStoryboardSegue *)segue {
-    //NSLog(@"unwindToFavorites");
-    //NSLog(@"Selected tests: %@", self.selectedTests);
     [self loadTestData];
     [self.tableView reloadData];
 }
@@ -77,10 +74,26 @@
             int testID = (int)self.selectedTestData[0][@"id"];
             
             [self.selectedTestData addObject:[self.testData objectForKey:[NSNumber numberWithInt:testID]]];
-//            NSArray *selectedTestData = [self.testData objectForKey:[NSNumber numberWithInt:testID]];
             testPerformanceViewController.testData = self.selectedTestData;
         }
     }
+    
+    if ([segue.identifier isEqualToString:@"addFavorites"]) {
+        
+        NSLog(@"Perforing identifier addFavorites");
+        
+            UINavigationController *navigationController = segue.destinationViewController;
+        
+        NSLog(@"SENDING TESTS: %@", self.selectedTests);
+//            SyntheticTestsViewController *syntheticTestsViewController = [navigationController.viewControllers firstObject];
+        SyntheticTestsViewController *syntheticTestsViewController = (SyntheticTestsViewController *)([navigationController viewControllers][0]);
+//            syntheticTestsViewController.selectedTests = self.selectedTests;
+        syntheticTestsViewController.favoriteTests = self.selectedTests;
+//        [syntheticTestsViewController.selectedTests addObjectsFromArray:self.selectedTests];
+
+    }
+    
+    
 }
 
 - (void)loadTestData {
