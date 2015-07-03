@@ -54,6 +54,11 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.32941176470588235" green="0.34901960784313724" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BHK-fn-0vt"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,6 +69,7 @@
                             <constraint firstItem="Mez-Lr-LHi" firstAttribute="leading" secondItem="If7-KM-AbS" secondAttribute="leading" id="D1V-pe-AB7"/>
                             <constraint firstItem="Cjh-ro-CP3" firstAttribute="leading" secondItem="KD3-H5-cvI" secondAttribute="leading" constant="16" id="Obi-xi-Nqn"/>
                             <constraint firstItem="x71-a0-wpA" firstAttribute="leading" secondItem="If7-KM-AbS" secondAttribute="trailing" constant="64" id="RGN-ls-CIz"/>
+                            <constraint firstAttribute="trailing" secondItem="Mez-Lr-LHi" secondAttribute="trailing" constant="61" id="Ry3-2e-yVY"/>
                             <constraint firstAttribute="trailing" secondItem="x71-a0-wpA" secondAttribute="trailing" constant="12" id="VEa-iw-yPi"/>
                             <constraint firstItem="x71-a0-wpA" firstAttribute="leading" secondItem="If7-KM-AbS" secondAttribute="trailing" constant="64" id="WL6-w8-0cK"/>
                             <constraint firstItem="Mez-Lr-LHi" firstAttribute="top" secondItem="KD3-H5-cvI" secondAttribute="top" constant="28" id="bMo-xf-r6H"/>

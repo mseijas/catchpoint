@@ -33,12 +33,19 @@
     self.testData = [[NSMutableDictionary alloc] init];
     self.selectedTestData = [[NSMutableArray alloc] init];
     
-    [self loadTestData];
+    if (self.selectedTestData.count > 0) {
+        [self loadTestData];
+    }
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticFavoriteTableViewCell"
                                                bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"CPSyntheticFavoriteTableViewCell"];
     
+    [self.tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self.tableView reloadData];
 }
 

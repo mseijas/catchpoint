@@ -35,7 +35,7 @@
     
     self.selectedTests = [[NSMutableArray alloc] init];
     self.allTests = [CPAPIParser getAllActiveTests];
-    [SVProgressHUD dismiss];
+//    [SVProgressHUD dismiss];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPSyntheticTestCell"
                                                bundle:[NSBundle mainBundle]]
@@ -44,9 +44,17 @@
     [self updateSelectionCount];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [SVProgressHUD dismiss];
+}
+
 - (IBAction)applySelectedTests:(id)sender {
     //NSLog(@"-applySelectedTests");
-    [self performSegueWithIdentifier:@"unwindToFavoritesWithTests" sender:self];
+    [SVProgressHUD show];
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self performSegueWithIdentifier:@"unwindToFavoritesWithTests" sender:self];
+    });
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
