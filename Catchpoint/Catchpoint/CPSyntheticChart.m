@@ -27,7 +27,7 @@
         SyntheticMetricType metricType = (SyntheticMetricType)[metrics[i] intValue];
         //NSLog(@"Synthetic Metric Type: %ld", metricType);
         
-        NSArray *metricData = [CPAPIParser getMetric:metricType fromSyntheticData:data average:nil];
+        NSArray *metricData = [CPAPIParser getMetric:metricType fromSyntheticData:data average:NO];
         NSMutableArray *yValues = [[NSMutableArray alloc] init];
         
         int xIndex = 0;
