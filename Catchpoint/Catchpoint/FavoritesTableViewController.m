@@ -21,6 +21,8 @@
 @property (strong, nonatomic) NSMutableDictionary *testData;
 @property (strong, nonatomic) NSMutableArray *selectedTestData;
 
+@property (strong, nonatomic) NSString *arrayFile;
+
 @end
 
 @implementation FavoritesTableViewController
@@ -28,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.selectedTests = [[NSMutableArray alloc] init];
+    [self loadFavoritesArray];
     self.testData = [[NSMutableDictionary alloc] init];
     self.selectedTestData = [[NSMutableArray alloc] init];
     
@@ -51,6 +53,7 @@
 - (IBAction)unwindToFavorites:(UIStoryboardSegue *)segue {
     [self loadTestData];
     [self.tableView reloadData];
+    [self saveFavoritesArray];
 }
 
 - (IBAction)refreshTestData:(id)sender {
@@ -135,8 +138,27 @@
     }
     
 //    NSLog(@"CURRENT TEST DATA: %@", self.testData);
+    [self.tableView reloadData];
     [SVProgressHUD dismiss];
     });
+}
+
+- (void)loadFavoritesArray {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    self.arrayFile = [documentsDirectory stringByAppendingPathComponent:@"CPFavorites.dat"];
+    
+    self.selectedTests = [[NSMutableArray alloc] initWithContentsOfFile: self.arrayFile];
+    if(self.selectedTests == nil)
+    {
+        //Array file didn't exist... create a new one
+        self.selectedTests = [[NSMutableArray alloc] init];
+    }
+}
+
+- (void)saveFavoritesArray {
+    [self.selectedTests writeToFile:self.arrayFile atomically:YES];
 }
 
 #pragma mark - Table view data source
