@@ -39,9 +39,9 @@
         self.selectedTests = [[NSMutableArray alloc] init];
     }
     
-    [self.view addGestureRecognizer:
-     [[UITapGestureRecognizer alloc] initWithTarget:self
-                                             action:@selector(hideKeyboard:)]];
+//    [self.view addGestureRecognizer:
+//     [[UITapGestureRecognizer alloc] initWithTarget:self
+//                                             action:@selector(hideKeyboard:)]];
     
     self.allTests = [CPAPIParser getAllActiveTests];
     
