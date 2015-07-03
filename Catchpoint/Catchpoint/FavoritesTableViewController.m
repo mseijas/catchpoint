@@ -160,6 +160,24 @@
     cell.responseMetric.text = [NSString stringWithFormat:@"%.2f", [responseAvg doubleValue]];
     cell.availabilityMetric.text = [NSString stringWithFormat:@"%.2f", [availabilityAvg doubleValue]];
     
+    
+    cell.responseMetric.textColor = [UIColor colorWithRed:0.212 green:0.667 blue:0.400 alpha:1];
+    cell.availabilityMetric.textColor = [UIColor colorWithRed:0.212 green:0.667 blue:0.400 alpha:1];
+    
+    if ([responseAvg doubleValue] > 500) {
+        cell.responseMetric.textColor = [UIColor colorWithRed:0.949 green:0.604 blue:0.220 alpha:1];
+    }
+    if ([responseAvg doubleValue] > 1000) {
+        cell.responseMetric.textColor = [UIColor colorWithRed:0.894 green:0.310 blue:0.267 alpha:1];
+    }
+    
+    if ([availabilityAvg doubleValue] < 80) {
+        cell.availabilityMetric.textColor = [UIColor colorWithRed:0.949 green:0.604 blue:0.220 alpha:1];
+    }
+    if ([availabilityAvg doubleValue] < 50) {
+        cell.availabilityMetric.textColor = [UIColor colorWithRed:0.894 green:0.310 blue:0.267 alpha:1];
+    }
+    
     return cell;
 }
 

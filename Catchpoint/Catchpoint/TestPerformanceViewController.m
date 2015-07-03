@@ -81,6 +81,23 @@
         cell.responseMetric.text = [NSString stringWithFormat:@"%.2f", [responseAvg doubleValue]];
         cell.availabilityMetric.text = [NSString stringWithFormat:@"%.2f", [availabilityAvg doubleValue]];
         
+        cell.responseMetric.textColor = [UIColor colorWithRed:0.212 green:0.667 blue:0.400 alpha:1];
+        cell.availabilityMetric.textColor = [UIColor colorWithRed:0.212 green:0.667 blue:0.400 alpha:1];
+        
+        if ([responseAvg doubleValue] > 500) {
+            cell.responseMetric.textColor = [UIColor colorWithRed:0.949 green:0.604 blue:0.220 alpha:1];
+        }
+        if ([responseAvg doubleValue] > 1000) {
+            cell.responseMetric.textColor = [UIColor colorWithRed:0.894 green:0.310 blue:0.267 alpha:1];
+        }
+        
+        if ([availabilityAvg doubleValue] < 80) {
+            cell.availabilityMetric.textColor = [UIColor colorWithRed:0.949 green:0.604 blue:0.220 alpha:1];
+        }
+        if ([availabilityAvg doubleValue] < 50) {
+            cell.availabilityMetric.textColor = [UIColor colorWithRed:0.894 green:0.310 blue:0.267 alpha:1];
+        }
+        
         return cell;
     }
     
@@ -145,7 +162,7 @@
 {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     
-    header.backgroundView.backgroundColor = [UIColor colorWithRed:0.859 green:0.855 blue:0.886 alpha:1];
+    header.backgroundView.backgroundColor = [UIColor colorWithRed:0.925 green:0.922 blue:0.949 alpha:1];
     header.textLabel.font = [UIFont systemFontOfSize:14.0f];
     header.textLabel.textColor = [UIColor colorWithRed:0.490 green:0.478 blue:0.549 alpha:1];
 }

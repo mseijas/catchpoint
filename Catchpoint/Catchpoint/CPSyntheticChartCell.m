@@ -21,6 +21,7 @@
 }
 
 - (void)setCellStyle {
+    self.chartView.clipsToBounds = YES;
     self.chartView.layer.cornerRadius = 5.0;
     self.chartView.layer.borderWidth = 1.0;
     self.chartView.layer.borderColor = [UIColor colorWithRed:214.0 / 255.0 green:214.0 / 255.0 blue:214.0 / 255.0 alpha:1.0].CGColor;
